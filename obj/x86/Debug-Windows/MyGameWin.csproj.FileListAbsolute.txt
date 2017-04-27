@@ -31,5 +31,4 @@ C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\ninja.pn
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\ranger.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\town.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\warrior.png
-C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\enemybase.png
-C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\icon.png
+C:\Users\maxine\Documents\Projects\TowerWars\obj\x86\Debug-Windows\MyGameWin.csprojResolveAssemblyReference.cache

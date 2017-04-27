@@ -4,18 +4,14 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\GameMain.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Utilities\GamePainter.cs">
     <Files>
-      <File FileName="src\GameMain.cs" Line="11" Column="16" />
-      <File FileName="src\Currency.cs" Line="1" Column="1" />
-      <File FileName="src\Tower.cs" Line="1" Column="1" />
-      <File FileName="src\Level.cs" Line="1" Column="1" />
-      <File FileName="src\Utilities\Messages.cs" Line="6" Column="59" />
-      <File FileName="src\CameraManager.cs" Line="1" Column="1" />
-      <File FileName="src\UnitCell.cs" Line="31" Column="70" />
-      <File FileName="src\Utilities\Position.cs" Line="19" Column="3" />
-      <File FileName="src\Utilities\GamePainter.cs" Line="52" Column="47" NotebookId="1" />
-      <File FileName="src\Managers\GameManager.cs" Line="7" Column="4" NotebookId="1" />
+      <File FileName="src\GameMain.cs" Line="22" Column="4" />
+      <File FileName="src\UnitCell.cs" Line="42" Column="22" />
+      <File FileName="src\Utilities\GamePainter.cs" Line="82" Column="4" />
+      <File FileName="src\Managers\GameManager.cs" Line="14" Column="28" />
+      <File FileName="src\Units\UnitType.cs" Line="6" Column="55" />
+      <File FileName="src\Utilities\Position.cs" Line="8" Column="37" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

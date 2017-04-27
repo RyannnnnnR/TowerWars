@@ -11,7 +11,14 @@ namespace MyGame
 		private Bitmap town;
 		private Bitmap mage;
 		private Bitmap ranger;
+		private Bitmap ninja;
+		private Bitmap healer;
 		private GameManager manager;
+		private UnitCell townCell;
+		private UnitCell mageCell;
+		private UnitCell rangerCell;
+		private UnitCell ninjaCell;
+		private UnitCell healerCell;
 		public GamePainter (GameManager manager)
 		{
 			//Load bitmaps
@@ -21,7 +28,23 @@ namespace MyGame
 			town = SwinGame.LoadBitmap ("town.png");
 			mage = SwinGame.LoadBitmap ("mage.png");
 			ranger = SwinGame.LoadBitmap ("ranger.png");
+			ninja = SwinGame.LoadBitmap ("ninja.png");
+			healer = SwinGame.LoadBitmap ("healer.png");
 			this.manager = manager;
+			InitialiseCells ();
+		}
+		private void InitialiseCells () { 
+			townCell = new UnitCell (town, Position.TOWN_IMAGE_X, Position.IMAGE_Y, Position.TOWN_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.TOWN_LABEL_X, Position.LABEL_Y, UnitType.Town);
+			mageCell = new UnitCell (mage, Position.MAGE_IMAGE_X, Position.IMAGE_Y, Position.MAGE_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.MAGE_LABEL_X, Position.LABEL_Y, UnitType.Mage);
+			rangerCell = new UnitCell (ranger, Position.RANGER_IMAGE_X, Position.IMAGE_Y, Position.RANGER_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.RANGER_LABEL_X, Position.LABEL_Y, UnitType.Ranger);
+			ninjaCell = new UnitCell (ninja, Position.NINJA_IMAGE_X, Position.IMAGE_Y, Position.NINJA_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.HEALER_LABEL_X, Position.LABEL_Y, UnitType.Healer);
+			healerCell = new UnitCell (healer, Position.HEALER_IMAGE_X, Position.IMAGE_Y, Position.HEALER_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.NINJA_LABEL_X, Position.LABEL_Y, UnitType.Ninja);
+			manager.AddUnitCell (townCell);
+			manager.AddUnitCell (mageCell);
+			manager.AddUnitCell (rangerCell);
+			manager.AddUnitCell (ninjaCell);
+			manager.AddUnitCell (healerCell);
+
 		}
 
 		public void paintBackground () {
@@ -42,10 +65,7 @@ namespace MyGame
 		}
 		public void drawUnitCells ()
 		{
-			//Start with 3 units
-			UnitCell townCell = new UnitCell (town, Position.TOWN_IMAGE_X, Position.IMAGE_Y, Position.TOWN_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT);
-			UnitCell mageCell = new UnitCell (mage, Position.MAGE_IMAGE_X, Position.IMAGE_Y, Position.MAGE_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT);
-			UnitCell rangerCell = new UnitCell (ranger, Position.RANGER_IMAGE_X, Position.IMAGE_Y, Position.RANGER_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT);
+			//Start with 3 units 
 			townCell.drawCell ();
 			mageCell.drawCell ();
 			rangerCell.drawCell ();
@@ -54,8 +74,10 @@ namespace MyGame
 		}
 		public void paintStartSequence () {
 			paintBackground ();
-			paintHomeBase (17, 490);
-			paintEnemeyBase (740, 488);//Make bases bigger??
+			paintHomeBase (Position.HOME_BASE_X, Position.HOME_BASE_Y);
+
+			SwinGame.DrawBitmap (SwinGame.LoadBitmap ("town.png"),79, 520);
+			paintEnemeyBase (Position.ENEMY_BASE_X, Position.ENEMY_BASE_Y);//Make bases bigger??
 			drawUnitCells ();
 		}
 

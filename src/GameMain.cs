@@ -11,15 +11,22 @@ namespace MyGame
 			SwinGame.SetIcon ("icon.png");
             SwinGame.OpenGraphicsWindow("TowerWars", 800, 600);
             SwinGame.ShowSwinGameSplashScreen();
-			GamePainter painter = new GamePainter (null);
+			GameManager manager = new GameManager ();
+			GamePainter painter = new GamePainter (manager);
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
             {
                 //Fetch the next batch of UI interaction
                 SwinGame.ProcessEvents();
 				//Paint all elements on to the screen
-				if(SwinGame.MouseClicked(MouseButton.LeftButton))
-					Console.WriteLine (SwinGame.MouseX() + " " + SwinGame.MouseY ());
+				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
+					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
+					foreach (UnitCell cell in manager.UnitCells) {
+						if (cell.isInCell (SwinGame.MousePosition ())){							Console.WriteLine (cell.Type);
+						}
+					}
+				}
+				
 				
 				painter.paintStartSequence ();
                 //SwinGame.DrawFramerate(0,0);
@@ -27,6 +34,7 @@ namespace MyGame
                 //Draw onto the screen
                 SwinGame.RefreshScreen(60);
             }
+			manager.UnitCells.Clear();
         }
     }
 }
