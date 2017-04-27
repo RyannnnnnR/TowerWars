@@ -13,6 +13,7 @@ namespace MyGame
             SwinGame.ShowSwinGameSplashScreen();
 			GameManager manager = new GameManager ();
 			GamePainter painter = new GamePainter (manager);
+			HomeTower t = new HomeTower ();
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
             {
@@ -21,6 +22,7 @@ namespace MyGame
 				//Paint all elements on to the screen
 				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
 					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
+					t.handleDamage (5);
 					foreach (UnitCell cell in manager.UnitCells) {
 						if (cell.isInCell (SwinGame.MousePosition ())){							Console.WriteLine (cell.Type);
 						}
