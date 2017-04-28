@@ -9,7 +9,7 @@ namespace MyGame
 		public Warrior ()
 		{
 			SwinGame.LoadResourceBundle ("warriorbundle.txt");
-			sprite = SwinGame.CreateSprite (SwinGame.BitmapNamed("warriorspritesheet"), SwinGame.AnimationScriptNamed("warriorwalking"));
+			sprite = SwinGame.CreateSprite (SwinGame.BitmapNamed("warriorBmp"), SwinGame.AnimationScriptNamed("walkingScrpt"));
 		}
 
 		public int dmg {
@@ -29,11 +29,10 @@ namespace MyGame
 
 		public override void move ()
 		{
-			SwinGame.SpriteStartAnimation (sprite, "warriorwalking");
+			SwinGame.SpriteStartAnimation (sprite, "walking_loop");
 			SwinGame.SpriteSetX (sprite, Position.SPAWN_X);
 			SwinGame.SpriteSetY (sprite, Position.SPAWN_Y);
 			while (true) {
-				{
 					SwinGame.DrawSprite (sprite);
 					SwinGame.RefreshScreen (60);
 					SwinGame.UpdateSprite (sprite);
@@ -42,4 +41,3 @@ namespace MyGame
 			}
 		}
 	}
-}

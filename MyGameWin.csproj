@@ -173,7 +173,33 @@
     <None Include="Resources\images\ninjaspritesheet.png" />
     <None Include="Resources\images\rangerspritesheet.png" />
     <None Include="Resources\images\townspritesheet.png" />
-    <None Include="Resources\images\warriorspritesheet.png" />
+    <None Include="Resources\images\warriorspritesheet.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\healerUnavailable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\mageunavailable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\ninjaunavailable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\rangerunavailable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\townunavailable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\warriorunavailable.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\animations\walking.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\bundles\warriorbundle.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Target Name="CopyLibsToOut">
     <Copy SourceFiles="@(WinLibs)" DestinationFolder="$(OutDir)" />

@@ -1,6 +1,0 @@
-﻿SwinGame Animation #v1
-
-f:0,3,1,1
-f:1,4,1,2
-f:2:5,1,
-i:warriorwalking, 0
