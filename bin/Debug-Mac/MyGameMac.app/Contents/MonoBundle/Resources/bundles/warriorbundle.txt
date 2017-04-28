@@ -1,0 +1,2 @@
+BITMAP,warriorspritesheet,warriorspritesheet.png, 96, 144, 3, 4, 12
+ANIM,warriorwalking,warriorwalking.txt

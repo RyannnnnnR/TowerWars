@@ -24,7 +24,6 @@ namespace MyGame
 		}
 		public void drawDamageTaken (float start,float dmgDone) {
 			SwinGame.FillRectangle (Color.Red, x+start, y, dmgDone, 3);
-			Console.WriteLine (x + start);
 
 		}
 		public void handleDamage (int dmg) {

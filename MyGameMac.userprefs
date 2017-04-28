@@ -1,9 +1,23 @@
 ﻿<Properties StartupConfiguration="{871B5A90-103A-46A5-BBB9-07C02B9851D1}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Resources/animations/warriorwalking.txt">
+    <Files>
+      <File FileName="src/GameMain.cs" Line="23" Column="8" />
+      <File FileName="src/HomeTower.cs" Line="7" Column="4" />
+      <File FileName="src/Tower.cs" Line="26" Column="63" />
+      <File FileName="src/EnemyTower.cs" Line="7" Column="4" />
+      <File FileName="src/Utilities/Position.cs" Line="35" Column="33" />
+      <File FileName="src/Utilities/Currency.cs" Line="6" Column="18" />
+      <File FileName="src/Utilities/GamePainter.cs" Line="34" Column="52" />
+      <File FileName="src/Units/Warrior.cs" Line="10" Column="4" />
+      <File FileName="Resources/bundles/warriorbundle.txt" Line="2" Column="6" />
+      <File FileName="Resources/animations/warriorwalking.txt" Line="6" Column="20" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Mac" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.MyGameMac PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.MyGameMac PreferredExecutionTarget="Test1" />
+  <MultiItemStartupConfigurations />
 </Properties>

@@ -13,7 +13,6 @@ namespace MyGame
             SwinGame.ShowSwinGameSplashScreen();
 			GameManager manager = new GameManager ();
 			GamePainter painter = new GamePainter (manager);
-			HomeTower t = new HomeTower ();
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
             {
@@ -21,10 +20,11 @@ namespace MyGame
                 SwinGame.ProcessEvents();
 				//Paint all elements on to the screen
 				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
-					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
-					t.handleDamage (5);
+					//Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
+					new Warrior ().move ();
 					foreach (UnitCell cell in manager.UnitCells) {
 						if (cell.isInCell (SwinGame.MousePosition ())){							Console.WriteLine (cell.Type);
+
 						}
 					}
 				}

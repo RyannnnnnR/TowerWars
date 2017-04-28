@@ -24,12 +24,15 @@ namespace MyGame
 		public const int NINJA_LABEL_X = 278;
 		public const int IMAGE_Y = 25;
 		public const int CELL_Y = 21;
-		public static int HEALTH_BAR_X = 27; 
+		public const int HOME_HEALTH_BAR_X = 27;
+		public const int ENEMY_HEALTH_BAR_X = 730;
 //Cells are inline
 		public const int CELL_WIDTH_HEIGHT = 40;
 		public static int HEALTH_BAR_Y = 433;
 
-//Square cells
+		//Square cells
+		public const int SPAWN_X = 100;
+		public const int SPAWN_Y = 100;
 		public const int LABEL_Y = 67;
 	}
 

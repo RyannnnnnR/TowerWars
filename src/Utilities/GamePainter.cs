@@ -19,17 +19,19 @@ namespace MyGame
 		private UnitCell rangerCell;
 		private UnitCell ninjaCell;
 		private UnitCell healerCell;
+		private HomeTower t = new HomeTower ();
+		private EnemyTower et = new EnemyTower ();
 		public GamePainter (GameManager manager)
 		{
 			//Load bitmaps
 			enemyBase = SwinGame.LoadBitmap ("enemybase.png");
 			homeBase = SwinGame.LoadBitmap ("homebase.png");
 			background = SwinGame.LoadBitmap ("hills.png");
-			town = SwinGame.LoadBitmap ("town.png");
-			mage = SwinGame.LoadBitmap ("mage.png");
-			ranger = SwinGame.LoadBitmap ("ranger.png");
-			ninja = SwinGame.LoadBitmap ("ninja.png");
-			healer = SwinGame.LoadBitmap ("healer.png");
+			town = SwinGame.LoadBitmap ("townunavailable.png");
+			mage = SwinGame.LoadBitmap ("mageunavailable.png");
+			ranger = SwinGame.LoadBitmap ("rangerunavailable.png");
+			ninja = SwinGame.LoadBitmap ("ninjaunavailable.png");
+			healer = SwinGame.LoadBitmap ("healerunavailable.png");
 			this.manager = manager;
 			InitialiseCells ();
 		}
@@ -75,7 +77,6 @@ namespace MyGame
 		public void paintStartSequence () {
 			paintBackground ();
 			paintHomeBase (Position.HOME_BASE_X, Position.HOME_BASE_Y);
-			new HomeTower ();
 			SwinGame.DrawBitmap (SwinGame.LoadBitmap ("town.png"),79, 520);
 			paintEnemeyBase (Position.ENEMY_BASE_X, Position.ENEMY_BASE_Y);//Make bases bigger??
 			drawUnitCells ();
