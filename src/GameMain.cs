@@ -20,8 +20,7 @@ namespace MyGame
                 SwinGame.ProcessEvents();
 				//Paint all elements on to the screen
 				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
-					//Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
-					new Warrior ().move ();
+					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
 					foreach (UnitCell cell in manager.UnitCells) {
 						if (cell.isInCell (SwinGame.MousePosition ())){							Console.WriteLine (cell.Type);
 

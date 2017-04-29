@@ -4,13 +4,8 @@ namespace MyGame
 	//Ranged or physical????
 	public class Ninja : Unit
 	{
-		public Ninja ()
+public Ninja () :base("ninjaBmp", "ninjaRunninScrpt")
 		{
-		}
-
-		public override void move ()
-		{
-			throw new NotImplementedException ();
 		}
 	}
 }

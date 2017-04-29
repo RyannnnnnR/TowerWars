@@ -3,7 +3,7 @@ namespace MyGame
 {
 	public class Town : Unit, PhysicalAttcker
 	{
-		public Town ()
+		public Town () : base("townBmp", "walkingScrpt")
 		{
 		}
 
@@ -18,11 +18,6 @@ namespace MyGame
 		}
 
 		public int attack ()
-		{
-			throw new NotImplementedException ();
-		}
-
-		public override void move ()
 		{
 			throw new NotImplementedException ();
 		}

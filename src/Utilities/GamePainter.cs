@@ -78,6 +78,7 @@ namespace MyGame
 			paintBackground ();
 			paintHomeBase (Position.HOME_BASE_X, Position.HOME_BASE_Y);
 			SwinGame.DrawBitmap (SwinGame.LoadBitmap ("town.png"),79, 520);
+			new Currency ().draw ();
 			paintEnemeyBase (Position.ENEMY_BASE_X, Position.ENEMY_BASE_Y);//Make bases bigger??
 			drawUnitCells ();
 		}

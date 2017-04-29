@@ -1,0 +1,9 @@
+BITMAP,warriorBmp,warriorspritesheet.png, 33, 36, 3, 4, 12
+BITMAP,ninjaBmp,ninjaspritesheet.png, 33, 36, 3, 4, 12
+BITMAP,healerBmp,healerspritesheet.png, 33, 36, 3, 4, 12
+BITMAP,rangerBmp,rangerspritesheet.png, 33, 36, 3, 4, 12
+BITMAP,townBmp,townspritesheet.png, 33, 36, 3, 4, 12
+BITMAP,mageBmp,magespritesheet.png, 33, 36, 3, 4, 12
+ANIM,walkingScrpt,walking.txt
+ANIM,healerWalkingScrpt,healerwalking.txt
+ANIM,ninjaRunningScrpt,ninjarunning.txt

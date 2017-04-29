@@ -24,6 +24,8 @@ namespace MyGame
 		public const int NINJA_LABEL_X = 278;
 		public const int IMAGE_Y = 25;
 		public const int CELL_Y = 21;
+		public const int COIN_X = 729;
+		public const int COIN_Y = 15;
 		public const int HOME_HEALTH_BAR_X = 27;
 		public const int ENEMY_HEALTH_BAR_X = 730;
 //Cells are inline

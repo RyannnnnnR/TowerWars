@@ -3,7 +3,7 @@ namespace MyGame
 {
 	public class Mage : Unit, SpellCaster
 	{
-		public Mage ()
+		public Mage () :base("mageBmp", "walkingScrpt")
 		{
 		}
 
@@ -28,11 +28,6 @@ namespace MyGame
 		}
 
 		public void Cast ()
-		{
-			throw new NotImplementedException ();
-		}
-
-		public override void move ()
 		{
 			throw new NotImplementedException ();
 		}

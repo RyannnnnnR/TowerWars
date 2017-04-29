@@ -1,2 +1,0 @@
-BITMAP,warriorBmp,warriorspritesheet.png, 33, 36, 3, 4, 12
-ANIM,walkingScrpt,walking.txt

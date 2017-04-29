@@ -40,4 +40,12 @@ C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\townunav
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\warriorunavailable.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\warriorspritesheet.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\walking.txt
-C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\bundles\warriorbundle.txt
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\bundles\characterbundle.txt
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\healerspritesheet.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\magespritesheet.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\ninjaspritesheet.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\rangerspritesheet.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\townspritesheet.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\healerwalking.txt
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\ninjarunning.txt
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\coin.png

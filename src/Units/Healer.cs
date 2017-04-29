@@ -3,7 +3,7 @@ namespace MyGame
 {
 	public class Healer : Unit, SpellCaster
 	{
-		public Healer ()
+		public Healer () :base("healerBmp", "healerWalkingScrpt")
 		{
 		}
 
@@ -32,9 +32,5 @@ namespace MyGame
 			throw new NotImplementedException ();
 		}
 
-		public override void move ()
-		{
-			throw new NotImplementedException ();
-		}
 	}
 }

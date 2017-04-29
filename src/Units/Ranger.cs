@@ -3,7 +3,7 @@ namespace MyGame
 {
 	public class Ranger :Unit, RangedAttacker
 	{
-		public Ranger ()
+		public Ranger () : base("rangerBmp", "walkingScrpt")
 		{
 		}
 
@@ -22,9 +22,5 @@ namespace MyGame
 			throw new NotImplementedException ();
 		}
 
-		public override void move ()
-		{
-			throw new NotImplementedException ();
-		}
 	}
 }
