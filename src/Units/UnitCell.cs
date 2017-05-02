@@ -31,7 +31,7 @@ namespace MyGame
 		public void drawCell () {
 			SwinGame.DrawBitmap (bitmap, bitmapX, bitmapY);
 			SwinGame.DrawRectangle (Color.Black, x, y, width, height);
-			SwinGame.DrawText (type.ToString (), Color.Black, labelX, labelY);
+			SwinGame.DrawText (type.ToString (), Color.White, labelX, labelY);
 
 		}
 		public bool isInCell (Point2D pt) {

@@ -42,6 +42,8 @@
     <Folder Include="src\Managers\" />
     <Folder Include="src\Utilities\" />
     <Folder Include="src\Units\" />
+    <Folder Include="src\Units\Heros\" />
+    <Folder Include="src\Units\Enemies\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\GameMain.cs" />
@@ -61,17 +63,17 @@
     <Compile Include="src\Utilities\Currency.cs" />
     <Compile Include="src\Units\UnitCell.cs" />
     <Compile Include="src\Managers\DeploymentManager.cs" />
-    <Compile Include="src\Units\Healer.cs" />
-    <Compile Include="src\Units\Ninja.cs" />
-    <Compile Include="src\Units\Warrior.cs" />
     <Compile Include="src\Units\Town.cs" />
-    <Compile Include="src\Units\Ranger.cs" />
     <Compile Include="src\Units\SpellCaster.cs" />
     <Compile Include="src\Units\PhysicalAttcker.cs" />
     <Compile Include="src\Units\RangedAttacker.cs" />
-    <Compile Include="src\Units\Mage.cs" />
     <Compile Include="src\HomeTower.cs" />
     <Compile Include="src\EnemyTower.cs" />
+    <Compile Include="src\Units\Heros\Healer.cs" />
+    <Compile Include="src\Units\Heros\Mage.cs" />
+    <Compile Include="src\Units\Heros\Ninja.cs" />
+    <Compile Include="src\Units\Heros\Ranger.cs" />
+    <Compile Include="src\Units\Heros\Warrior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
