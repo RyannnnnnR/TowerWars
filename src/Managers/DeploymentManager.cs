@@ -15,6 +15,7 @@ namespace MyGame
 		public Unit handleInput (Point2D mouse) {
 				foreach (UnitCell cell in manager.UnitCells) {
 					if (cell.isInCell (mouse)) {
+					Console.WriteLine (cell.Type);
 						return Deloy (cell.Type);
 					}
 				}
@@ -29,6 +30,9 @@ namespace MyGame
 			case UnitType.Mage:
 				Mage mage = new Mage ();
 				return mage;
+			case UnitType.Ranger:
+				Ranger ranger = new Ranger ();
+				return ranger;
 			case UnitType.Ninja:
 				Ninja ninja = new Ninja ();
 				return ninja;
