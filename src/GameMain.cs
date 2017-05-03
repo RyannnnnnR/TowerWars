@@ -8,11 +8,11 @@ namespace MyGame
         public static void Main()
         {
 			//Open the game window
-			SwinGame.SetIcon ("icon.png");
             SwinGame.OpenGraphicsWindow("TowerWars", 800, 600);
             SwinGame.ShowSwinGameSplashScreen();
 			GameManager manager = new GameManager ();
 			GamePainter painter = new GamePainter (manager);
+			Currency currency = new Currency (painter, manager);
             //Run the game loop
             while(false == SwinGame.WindowCloseRequested())
             {
@@ -21,16 +21,12 @@ namespace MyGame
 				//Paint all elements on to the screen
 				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
 					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
-					foreach (UnitCell cell in manager.UnitCells) {
-						if (cell.isInCell (SwinGame.MousePosition ())){							Console.WriteLine (cell.Type);
-
-						}
 					}
-				}
-				
-				
-				painter.paintStartSequence ();
-                //SwinGame.DrawFramerate(0,0);
+
+				painter.Paint ();
+				currency.update ();
+                SwinGame.DrawFramerate(0,0);
+				SwinGame.ClearScreen ();
                 
                 //Draw onto the screen
                 SwinGame.RefreshScreen(60);

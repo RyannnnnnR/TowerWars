@@ -60,22 +60,23 @@
     <Compile Include="src\Managers\GameManager.cs" />
     <Compile Include="src\Managers\LevelManager.cs" />
     <Compile Include="src\Managers\TeamManager.cs" />
-    <Compile Include="src\Units\Healer.cs" />
-    <Compile Include="src\Units\Mage.cs" />
-    <Compile Include="src\Units\Ninja.cs" />
     <Compile Include="src\Units\PhysicalAttcker.cs" />
     <Compile Include="src\Units\RangedAttacker.cs" />
-    <Compile Include="src\Units\Ranger.cs" />
     <Compile Include="src\Units\SpellCaster.cs" />
     <Compile Include="src\Units\Town.cs" />
     <Compile Include="src\Units\Unit.cs" />
     <Compile Include="src\Units\UnitCell.cs" />
     <Compile Include="src\Units\UnitType.cs" />
-    <Compile Include="src\Units\Warrior.cs" />
     <Compile Include="src\Utilities\Currency.cs" />
     <Compile Include="src\Utilities\GamePainter.cs" />
     <Compile Include="src\Utilities\Messages.cs" />
     <Compile Include="src\Utilities\Position.cs" />
+    <Compile Include="src\Units\Heros\Healer.cs" />
+    <Compile Include="src\Units\Heros\Mage.cs" />
+    <Compile Include="src\Units\Heros\Ninja.cs" />
+    <Compile Include="src\Units\Heros\Ranger.cs" />
+    <Compile Include="src\Units\Heros\Warrior.cs" />
+    <Compile Include="src\Utilities\GameState.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

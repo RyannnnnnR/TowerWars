@@ -7,8 +7,7 @@ namespace MyGame
 	{
 		private int health;
 		private int movementSpeed;
-		private string bitmap;
-		private string animation;
+		private int price;
 		private Sprite sprite;
 		public Unit (string bitmap, string animation)
 		{
@@ -27,6 +26,10 @@ namespace MyGame
 				SwinGame.RefreshScreen (60);
 				SwinGame.ProcessEvents ();
 			}
+		}
+		public int Price { 
+			get { return price; }
+			set { price = value;}
 		}
 		public void draw () { 
 			SwinGame.DrawSprite (sprite);

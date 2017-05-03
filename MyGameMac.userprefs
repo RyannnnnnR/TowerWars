@@ -1,16 +1,17 @@
 ﻿<Properties StartupConfiguration="{871B5A90-103A-46A5-BBB9-07C02B9851D1}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Resources/animations/warriorwalking.txt">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src/Units/Unit.cs">
     <Files>
-      <File FileName="src/GameMain.cs" Line="23" Column="8" />
+      <File FileName="src/GameMain.cs" Line="15" Column="40" />
       <File FileName="src/HomeTower.cs" Line="7" Column="4" />
       <File FileName="src/Tower.cs" Line="26" Column="63" />
       <File FileName="src/EnemyTower.cs" Line="7" Column="4" />
-      <File FileName="src/Utilities/Position.cs" Line="35" Column="33" />
-      <File FileName="src/Utilities/Currency.cs" Line="6" Column="18" />
-      <File FileName="src/Utilities/GamePainter.cs" Line="34" Column="52" />
-      <File FileName="src/Units/Warrior.cs" Line="10" Column="4" />
-      <File FileName="Resources/bundles/warriorbundle.txt" Line="2" Column="6" />
-      <File FileName="Resources/animations/warriorwalking.txt" Line="6" Column="20" />
+      <File FileName="src/Utilities/Position.cs" Line="35" Column="17" />
+      <File FileName="src/Utilities/Currency.cs" Line="39" Column="5" />
+      <File FileName="src/Utilities/GamePainter.cs" Line="90" Column="12" />
+      <File FileName="src/Utilities/GameState.cs" Line="6" Column="26" />
+      <File FileName="src/Units/Heros/Healer.cs" Line="1" Column="1" />
+      <File FileName="src/Managers/GameManager.cs" Line="9" Column="46" />
+      <File FileName="src/Units/Unit.cs" Line="12" Column="10" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug-Mac" />
@@ -18,6 +19,6 @@
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.MyGameMac PreferredExecutionTarget="Test1" />
+  <MonoDevelop.Ide.ItemProperties.MyGameMac PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
 </Properties>
