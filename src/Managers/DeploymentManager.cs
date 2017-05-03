@@ -1,10 +1,25 @@
 ﻿using System;
+using SwinGameSDK;
+
 namespace MyGame
 {
 	public class DeploymentManager
 	{
-		public DeploymentManager ()
+		private Unit unit;
+		private GameManager manager;
+		public DeploymentManager (GameManager manager)
 		{
+			this.manager = manager;
+		}
+
+		public Unit handleInput (Point2D mouse) {
+				foreach (UnitCell cell in manager.UnitCells) {
+					if (cell.isInCell (mouse)) {
+						return Deloy (cell.Type);
+					}
+				}
+			return null;
+		
 		}
 		public Unit Deloy (UnitType type) { 
 			switch(type){ 

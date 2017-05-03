@@ -4,13 +4,16 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Utilities\Currency.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Managers\GameManager.cs">
     <Files>
-      <File FileName="src\GameMain.cs" Line="35" Column="17" />
+      <File FileName="src\GameMain.cs" Line="17" Column="35" />
       <File FileName="src\Units\Unit.cs" Line="12" Column="4" />
       <File FileName="src\Units\Heros\Warrior.cs" Line="1" Column="1" />
-      <File FileName="src\Utilities\GamePainter.cs" Line="98" Column="4" />
+      <File FileName="src\Utilities\GamePainter.cs" Line="6" Column="15" />
       <File FileName="src\Utilities\Currency.cs" Line="28" Column="15" />
+      <File FileName="src\Managers\DeploymentManager.cs" Line="22" Column="6" />
+      <File FileName="src\Units\UnitCell.cs" Line="19" Column="44" />
+      <File FileName="src\Managers\GameManager.cs" Line="21" Column="4" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
