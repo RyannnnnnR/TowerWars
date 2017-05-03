@@ -5,9 +5,6 @@ namespace MyGame
 {
 	public class UnitCell
 	{
-		private Bitmap bitmap;
-		private int bitmapX;
-		private int bitmapY;
 		private int x;
 		private int y;
 		private int width;
@@ -15,21 +12,17 @@ namespace MyGame
 		private int labelX;
 		private int labelY;
 		private UnitType type;
-		public UnitCell (Bitmap  bitmap,int bitmapX, int bitmapY,int x, int y, int width, int labelX, int labelY, UnitType type)
+		public UnitCell (int x,int labelX, UnitType type)
 		{
-			this.bitmap = bitmap;
-			this.bitmapX = bitmapX;
-			this.bitmapY = bitmapY;
 			this.x = x;
-			this.y = y;
-			this.width = width;
-			height = width;//Square
+			this.y = Position.CELL_Y;
+			this.width = Position.CELL_WIDTH_HEIGHT;
+			this.height = width;//Square
 			this.labelX = labelX;
-			this.labelY = labelY;
+			this.labelY = Position.LABEL_Y;
 			this.type = type;
 		}
 		public void drawCell () {
-			SwinGame.DrawBitmap (bitmap, bitmapX, bitmapY);
 			SwinGame.DrawRectangle (Color.Black, x, y, width, height);
 			SwinGame.DrawText (type.ToString (), Color.White, labelX, labelY);
 

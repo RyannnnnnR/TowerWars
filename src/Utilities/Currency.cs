@@ -6,15 +6,13 @@ namespace MyGame
 {
 	public class Currency
 	{
-		int amount = 0;
-		int delay = 60;
+		private int amount = 0;
+		private int delay = 60;
 		private GameManager manager;
-		private GamePainter painter;
 
-		public Currency (GamePainter painter, GameManager manager)
+		public Currency (GameManager manager)
 		{
 			this.manager = manager;
-			this.painter = painter;
 		}
 
 		public void drawCoin ()
@@ -36,8 +34,14 @@ namespace MyGame
 					delay = 60;
 				}
 				drawAmount ();
-				painter.makeUnitsAvailable (amount);
 
 		}
+		public int Amount {
+			get {
+				return amount;
+			}
+			set { amount = value; }
+		}
+
 	}
 }

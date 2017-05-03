@@ -6,26 +6,21 @@ namespace MyGame
 	public abstract class Unit
 	{
 		private int health;
-		private int movementSpeed;
 		private int price;
 		private Sprite sprite;
 		public Unit (string bitmap, string animation)
 		{
-			SwinGame.LoadResourceBundle ("characterbundle.txt");
 			sprite = SwinGame.CreateSprite (SwinGame.BitmapNamed (bitmap), SwinGame.AnimationScriptNamed (animation));
+			SetLocation (Position.SPAWN_X, Position.SPAWN_Y);
+			SwinGame.SpriteStartAnimation (sprite, "walking_loop");
 		}
-		public void SetLocation (int x, int y) {
+		public void SetLocation (float x, float y) {
 			SwinGame.SpriteSetX (sprite, x);
 			SwinGame.SpriteSetY (sprite, y);
 		}
-		public void move () { 
-			SwinGame.SpriteStartAnimation (sprite, "walking_loop");
-			while (true) {
-				//Detect collision
+		public void move (float movementSpeed) { 
 				draw ();
-				SwinGame.RefreshScreen (60);
-				SwinGame.ProcessEvents ();
-			}
+				SetLocation (SwinGame.SpriteX (sprite) + movementSpeed, Position.SPAWN_Y);
 		}
 		public int Price { 
 			get { return price; }

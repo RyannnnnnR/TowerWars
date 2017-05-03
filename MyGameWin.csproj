@@ -63,7 +63,6 @@
     <Compile Include="src\Utilities\Currency.cs" />
     <Compile Include="src\Units\UnitCell.cs" />
     <Compile Include="src\Managers\DeploymentManager.cs" />
-    <Compile Include="src\Units\Town.cs" />
     <Compile Include="src\Units\SpellCaster.cs" />
     <Compile Include="src\Units\PhysicalAttcker.cs" />
     <Compile Include="src\Units\RangedAttacker.cs" />
@@ -74,6 +73,8 @@
     <Compile Include="src\Units\Heros\Ninja.cs" />
     <Compile Include="src\Units\Heros\Ranger.cs" />
     <Compile Include="src\Units\Heros\Warrior.cs" />
+    <Compile Include="src\Utilities\GameState.cs" />
+    <Compile Include="src\Units\Heros\Town.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

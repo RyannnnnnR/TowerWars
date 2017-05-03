@@ -6,24 +6,25 @@ namespace MyGame
 		public DeploymentManager ()
 		{
 		}
-		public void Deloy (UnitType type) { 
+		public Unit Deloy (UnitType type) { 
 			switch(type){ 
 				case UnitType.Town:
-				//
-				//draw()
-				//Move()
-				break;
+				Town town = new Town ();
+				return town;
 			case UnitType.Mage:
-				break;
+				Mage mage = new Mage ();
+				return mage;
 			case UnitType.Ninja:
-				break;
+				Ninja ninja = new Ninja ();
+				return ninja;
 			case UnitType.Healer:
-				break;
+				Healer healer = new Healer ();
+				return healer;
 			case UnitType.Warrior:
-				break;
+				Warrior warrior = new Warrior ();
+				return warrior;
 			default:
-				//Class not found
-				break;
+				return null;
 			}
 		}
 	}

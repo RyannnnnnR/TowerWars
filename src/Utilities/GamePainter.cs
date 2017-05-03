@@ -25,9 +25,11 @@ namespace MyGame
 		private UnitCell rangerCell;
 		private UnitCell ninjaCell;
 		private UnitCell healerCell;
+		private Currency currency;
+		private Town warrior = new Town ();
 		private HomeTower t = new HomeTower ();
 		private EnemyTower et = new EnemyTower ();
-		public GamePainter (GameManager manager)
+		public GamePainter (GameManager manager, Currency currency)
 		{
 			//Load bitmaps
 			coin = SwinGame.LoadBitmap ("coin.png");
@@ -45,14 +47,15 @@ namespace MyGame
 			uninja = SwinGame.LoadBitmap ("ninjaunavailable.png");
 			uhealer = SwinGame.LoadBitmap ("healerunavailable.png");
 			this.manager = manager;
+			this.currency = currency;
 			InitialiseCells ();
 		}
 		private void InitialiseCells () { 
-			townCell = new UnitCell (utown, Position.TOWN_IMAGE_X, Position.IMAGE_Y, Position.TOWN_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.TOWN_LABEL_X, Position.LABEL_Y, UnitType.Town);
-			mageCell = new UnitCell (umage, Position.MAGE_IMAGE_X, Position.IMAGE_Y, Position.MAGE_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.MAGE_LABEL_X, Position.LABEL_Y, UnitType.Mage);
-			rangerCell = new UnitCell (uranger, Position.RANGER_IMAGE_X, Position.IMAGE_Y, Position.RANGER_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.RANGER_LABEL_X, Position.LABEL_Y, UnitType.Ranger);
-			ninjaCell = new UnitCell (uninja, Position.NINJA_IMAGE_X, Position.IMAGE_Y, Position.NINJA_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.HEALER_LABEL_X, Position.LABEL_Y, UnitType.Healer);
-			healerCell = new UnitCell (uhealer, Position.HEALER_IMAGE_X, Position.IMAGE_Y, Position.HEALER_CELL_X, Position.CELL_Y, Position.CELL_WIDTH_HEIGHT, Position.NINJA_LABEL_X, Position.LABEL_Y, UnitType.Ninja);
+			townCell = new UnitCell (Position.TOWN_CELL_X,Position.TOWN_LABEL_X, UnitType.Town);
+			mageCell = new UnitCell (Position.MAGE_CELL_X, Position.MAGE_LABEL_X, UnitType.Mage);
+			rangerCell = new UnitCell(Position.RANGER_CELL_X, Position.RANGER_LABEL_X, UnitType.Ranger);
+			ninjaCell = new UnitCell (Position.NINJA_CELL_X,Position.HEALER_LABEL_X, UnitType.Healer);
+			healerCell = new UnitCell (Position.HEALER_CELL_X,Position.NINJA_LABEL_X, UnitType.Ninja);
 			manager.AddUnitCell (townCell);
 			manager.AddUnitCell (mageCell);
 			manager.AddUnitCell (rangerCell);
@@ -83,26 +86,21 @@ namespace MyGame
 			townCell.drawCell ();
 			mageCell.drawCell ();
 			rangerCell.drawCell ();
+			Bitmap availTown = currency.Amount >= 10 ? town : utown;
+			Bitmap availRanger = currency.Amount >= 25 ? ranger : uranger;
+			Bitmap availMage = currency.Amount >= 35 ? mage : umage;
+
+			SwinGame.DrawBitmap (availTown, Position.TOWN_IMAGE_X, Position.IMAGE_Y);
+			SwinGame.DrawBitmap (availRanger, Position.RANGER_IMAGE_X, Position.IMAGE_Y);
+			SwinGame.DrawBitmap (availMage, Position.MAGE_IMAGE_X, Position.IMAGE_Y);
 			//Add cells to list in game (interactions) manager.
 
-		}
-		public void makeUnitsAvailable (int amount) {
-			switch (amount) {
-			case 10:
-				SwinGame.DrawBitmap (town, Position.TOWN_IMAGE_X, Position.IMAGE_Y);
-				break;
-			case 25:
-				SwinGame.DrawBitmap (ranger, Position.RANGER_CELL_X, Position.IMAGE_Y);
-				break;
-			case 35:
-				SwinGame.DrawBitmap (mage, Position.MAGE_CELL_X, Position.IMAGE_Y);
-				break;
-			}
 		}
 		public void Paint () {
 			paintBackground ();
 			paintHomeBase (Position.HOME_BASE_X, Position.HOME_BASE_Y);
 			SwinGame.DrawBitmap (coin, Position.COIN_X, Position.COIN_Y);
+			//warrior.move (0.5f);
 			paintEnemeyBase (Position.ENEMY_BASE_X, Position.ENEMY_BASE_Y);
 			drawUnitCells ();
 		}
