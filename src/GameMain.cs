@@ -13,9 +13,10 @@ namespace MyGame
 			SwinGame.LoadResourceBundle ("characterbundle.txt");
 			GameManager manager = new GameManager ();
 			Currency currency = new Currency (manager);
-			DeploymentManager deployManager = new DeploymentManager (manager);
+			TeamManager teamManager = new TeamManager ();
+			DeploymentManager deployManager = new DeploymentManager (manager, currency, teamManager);
 			GamePainter painter = new GamePainter (manager, currency);
-			Unit unit = null;
+
 			Warrior warrior = new Warrior ();
 			//Run the game loop
 			while (false == SwinGame.WindowCloseRequested ()) {
@@ -23,12 +24,15 @@ namespace MyGame
 				SwinGame.ProcessEvents ();
 				painter.Paint ();
 				//Paint all elements on to the screen
-				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
-					unit = deployManager.handleInput (SwinGame.MousePosition ());
+
+				deployManager.handleInput (SwinGame.MousePosition ());
+				if (teamManager.heros.Count > 0) {
+
+					foreach (Unit unit in teamManager.heros) {
+						unit.move (0.5f);
+					}
 				}
-				if (unit != null) {
-					unit.move (0.5f);
-				}
+
 					
 					currency.update ();
 					SwinGame.DrawFramerate (0, 0);

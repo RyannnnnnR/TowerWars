@@ -6,12 +6,19 @@ namespace MyGame
 {
 	public class TeamManager
 	{
-		private List<Sprite> heros;
-		private List<Sprite> enemies;
+		public List<Unit> heros;
+		public List<Unit> enemies;
 		public TeamManager ()
 		{
-			heros = new List<Sprite> ();
-			enemies = new List<Sprite> ();
+			heros = new List<Unit> ();
+			enemies = new List<Unit> ();
+		}
+		public void AddHero (Unit hero) {
+			heros.Add (hero);
+		}
+		public void AddEnemy (Unit enemy)
+		{
+			enemies.Add (enemy);
 		}
 	}
 }

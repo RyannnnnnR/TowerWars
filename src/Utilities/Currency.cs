@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using SwinGameSDK;
 
@@ -8,11 +9,17 @@ namespace MyGame
 	{
 		private int amount = 0;
 		private int delay = 60;
+		private Dictionary<UnitType, int> pricelist = new Dictionary<UnitType, int> ();
 		private GameManager manager;
 
 		public Currency (GameManager manager)
 		{
 			this.manager = manager;
+			pricelist.Add (UnitType.Town, 10);
+			pricelist.Add (UnitType.Ranger, 25);
+			pricelist.Add (UnitType.Mage, 35);
+			pricelist.Add (UnitType.Warrior, 50);
+			pricelist.Add (UnitType.Ninja, 75);
 		}
 
 		public void drawCoin ()
@@ -35,6 +42,9 @@ namespace MyGame
 				}
 				drawAmount ();
 
+		}
+		public Dictionary<UnitType, int> PriceList { 
+			get { return pricelist; }
 		}
 		public int Amount {
 			get {
