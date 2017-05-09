@@ -32,5 +32,9 @@ namespace MyGame
 			throw new NotImplementedException ();
 		}
 
+		public override string getName ()
+		{
+			throw new NotImplementedException ();
+		}
 	}
 }

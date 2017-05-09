@@ -5,10 +5,10 @@ namespace MyGame
 {
 	public class DeploymentManager
 	{
-		private Unit unit;
 		private GameManager manager;
 		private Currency currency;
 		private TeamManager teamManager;
+		private int delay = 300;//Spawn enemy every 5 seconds???
 		public DeploymentManager (GameManager manager, Currency currency, TeamManager teamManager)
 		{
 			this.manager = manager;
@@ -21,16 +21,23 @@ namespace MyGame
 			foreach (UnitCell cell in manager.UnitCells) {
 					if (cell.isInCell (mouse)) {
 						if (currency.Amount >= currency.PriceList [cell.Type]) {
-							return Deloy (cell.Type);
+							return DeloyHero (cell.Type);
 						} else {
-							Console.WriteLine ("Not enough money!");
+							SwinGame.DrawText ("Not enough money", Color.Red, 100, 100); 
 						}
 					}
 				}
 			}
 			return null;
 		}
-		public Unit Deloy (UnitType type) { 
+		public void DeployEnemy () {
+			delay--;
+			if (delay == 0) { 
+				
+			}
+		
+		}
+		public Unit DeloyHero (UnitType type) { 
 			switch(type){ 
 				case UnitType.Town:
 				currency.Amount -= currency.PriceList [UnitType.Town];
@@ -38,10 +45,12 @@ namespace MyGame
 				teamManager.AddHero (town);
 				return town;
 			case UnitType.Mage:
+				currency.Amount -= currency.PriceList [UnitType.Mage];
 				Mage mage = new Mage ();
 				teamManager.AddHero (mage);
 				return mage;
 			case UnitType.Ranger:
+				currency.Amount -= currency.PriceList [UnitType.Ranger];
 				Ranger ranger = new Ranger ();
 				teamManager.AddHero (ranger);
 				return ranger;
@@ -61,5 +70,10 @@ namespace MyGame
 				return null;
 			}
 		}
+		private Unit getRandomEnemy () {
+			Random rand = new Random ();
+			return null;
+		}
+
 	}
 }

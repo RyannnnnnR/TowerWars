@@ -18,7 +18,8 @@ namespace MyGame
 			pricelist.Add (UnitType.Town, 10);
 			pricelist.Add (UnitType.Ranger, 25);
 			pricelist.Add (UnitType.Mage, 35);
-			pricelist.Add (UnitType.Warrior, 50);
+			pricelist.Add (UnitType.Healer, 45);
+			pricelist.Add (UnitType.Warrior, 55);
 			pricelist.Add (UnitType.Ninja, 75);
 		}
 

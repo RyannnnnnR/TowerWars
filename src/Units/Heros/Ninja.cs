@@ -7,5 +7,10 @@ namespace MyGame
 public Ninja () :base("ninjaBmp", "ninjaRunninScrpt")
 		{
 		}
+
+		public override string getName ()
+		{
+			return "ninja";
+		}
 	}
 }

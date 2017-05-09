@@ -29,6 +29,10 @@ namespace MyGame
 				if (teamManager.heros.Count > 0) {
 
 					foreach (Unit unit in teamManager.heros) {
+						if (unit.getName () == "ninja") {							unit.move (0.7f);
+						} else if (unit.getName () == "healer") {
+							unit.move (0.4f);
+						}
 						unit.move (0.5f);
 					}
 				}

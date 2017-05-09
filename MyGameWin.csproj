@@ -75,6 +75,11 @@
     <Compile Include="src\Units\Heros\Warrior.cs" />
     <Compile Include="src\Utilities\GameState.cs" />
     <Compile Include="src\Units\Heros\Town.cs" />
+    <Compile Include="src\Units\Enemies\Tree.cs" />
+    <Compile Include="src\Units\Enemies\Cactus.cs" />
+    <Compile Include="src\Units\Enemies\Phoenix.cs" />
+    <Compile Include="src\Units\Enemies\Ghost.cs" />
+    <Compile Include="src\Units\Enemies\Demon.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
@@ -222,6 +227,24 @@
     <None Include="Resources\images\coin.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Resources\images\.DS_Store" />
+    <None Include="Resources\images\fireball.png" />
+    <None Include="Resources\images\monster4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\monster_cacto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\monster_lich.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\monster_phoenix.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\monster_treant.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\spells.png" />
   </ItemGroup>
   <Target Name="CopyLibsToOut">
     <Copy SourceFiles="@(WinLibs)" DestinationFolder="$(OutDir)" />

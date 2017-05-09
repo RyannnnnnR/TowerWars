@@ -26,6 +26,7 @@ namespace MyGame
 			get { return price; }
 			set { price = value;}
 		}
+		public abstract string getName ();
 		public void draw () { 
 			SwinGame.DrawSprite (sprite);
 			SwinGame.UpdateSprite (sprite);

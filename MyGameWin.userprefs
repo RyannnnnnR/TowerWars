@@ -4,17 +4,28 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Managers\TeamManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Units\Enemies\Demon.cs">
     <Files>
-      <File FileName="src\GameMain.cs" Line="35" Column="6" />
-      <File FileName="src\Units\Unit.cs" Line="13" Column="11" />
-      <File FileName="src\Units\Heros\Warrior.cs" Line="1" Column="1" />
-      <File FileName="src\Utilities\GamePainter.cs" Line="63" Column="37" />
-      <File FileName="src\Utilities\Currency.cs" Line="28" Column="15" />
-      <File FileName="src\Managers\DeploymentManager.cs" Line="32" Column="17" />
+      <File FileName="src\GameMain.cs" Line="17" Column="93" />
+      <File FileName="src\Units\Unit.cs" Line="29" Column="18" />
+      <File FileName="src\Units\Heros\Warrior.cs" Line="6" Column="20" />
+      <File FileName="src\Utilities\Currency.cs" Line="22" Column="39" />
+      <File FileName="src\Managers\DeploymentManager.cs" Line="26" Column="68" />
       <File FileName="src\Units\UnitCell.cs" Line="19" Column="44" />
       <File FileName="src\Managers\GameManager.cs" Line="12" Column="14" />
-      <File FileName="src\Managers\TeamManager.cs" Line="21" Column="21" />
+      <File FileName="src\Managers\TeamManager.cs" Line="21" Column="11" />
+      <File FileName="src\Units\Heros\Town.cs" Line="27" Column="18" />
+      <File FileName="src\Units\Heros\Healer.cs" Line="4" Column="19" />
+      <File FileName="src\Units\Heros\Mage.cs" Line="37" Column="18" />
+      <File FileName="src\Units\Heros\Ninja.cs" Line="13" Column="19" />
+      <File FileName="src\Units\Heros\Ranger.cs" Line="20" Column="23" />
+      <File FileName="Resources\bundles\characterbundle.txt" Line="11" Column="26" />
+      <File FileName="src\Tower.cs" Line="1" Column="1" />
+      <File FileName="src\Units\Enemies\Tree.cs" Line="8" Column="5" />
+      <File FileName="src\Units\Enemies\Cactus.cs" Line="8" Column="5" />
+      <File FileName="src\Units\Enemies\Phoenix.cs" Line="8" Column="5" />
+      <File FileName="src\Units\Enemies\Ghost.cs" Line="8" Column="6" />
+      <File FileName="src\Units\Enemies\Demon.cs" Line="4" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

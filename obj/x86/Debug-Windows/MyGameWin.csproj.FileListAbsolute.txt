@@ -49,3 +49,8 @@ C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\townspri
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\healerwalking.txt
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\ninjarunning.txt
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\coin.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\monster4.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\monster_cacto.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\monster_lich.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\monster_phoenix.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\monster_treant.png
