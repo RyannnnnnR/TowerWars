@@ -23,16 +23,16 @@ namespace MyGame
 		public const int HEALER_LABEL_X = 218;
 		public const int NINJA_LABEL_X = 278;
 		public const int IMAGE_Y = 25;
-		public const int CELL_Y = 21;
+		public const int CELL_Y = 21;//Cells are inline
 		public const int COIN_X = 729;
 		public const int COIN_Y = 15;
 		public const int HOME_HEALTH_BAR_X = 27;
 		public const int ENEMY_HEALTH_BAR_X = 730;
-//Cells are inline
-		public const int CELL_WIDTH_HEIGHT = 40;
-		public static int HEALTH_BAR_Y = 433;
+		public const int CELL_WIDTH_HEIGHT = 40;//Square cells
+		public const int HEALTH_BAR_Y = 433;
+		public const int ERROR_X = 332;
+		public const int ERROR_Y = 44;
 
-		//Square cells
 		public const int SPAWN_X = 100;
 		public const int SPAWN_Y = 100;
 		public const int LABEL_Y = 67;

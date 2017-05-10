@@ -3,9 +3,9 @@ namespace MyGame
 {
 	public class Cactus : Unit
 	{
-		//public Cactus ()
-		//{
-		//}
+		public Cactus () : base("monster_cacto.png", "cactowalking.txt")
+		{
+		}
 
 		public override string getName ()
 		{

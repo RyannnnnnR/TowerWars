@@ -63,7 +63,6 @@
     <Compile Include="src\Units\PhysicalAttcker.cs" />
     <Compile Include="src\Units\RangedAttacker.cs" />
     <Compile Include="src\Units\SpellCaster.cs" />
-    <Compile Include="src\Units\Town.cs" />
     <Compile Include="src\Units\Unit.cs" />
     <Compile Include="src\Units\UnitCell.cs" />
     <Compile Include="src\Units\UnitType.cs" />
@@ -77,6 +76,14 @@
     <Compile Include="src\Units\Heros\Ranger.cs" />
     <Compile Include="src\Units\Heros\Warrior.cs" />
     <Compile Include="src\Utilities\GameState.cs" />
+    <Compile Include="src\Units\Enemies\Cactus.cs" />
+    <Compile Include="src\Units\Enemies\Demon.cs" />
+    <Compile Include="src\Units\Enemies\Ghost.cs" />
+    <Compile Include="src\Units\Enemies\Phoenix.cs" />
+    <Compile Include="src\Units\Enemies\Tree.cs" />
+    <Compile Include="src\Units\Heros\Town.cs" />
+    <Compile Include="src\Managers\ErrorManager.cs" />
+    <Compile Include="src\Managers\GarbageCollecter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
@@ -98,9 +105,5 @@
       <IsCxx>False</IsCxx>
       <Kind>Dynamic</Kind>
     </NativeReference>
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\bundles\warriorbundle.txt" />
-    <BundleResource Include="Resources\animations\warriorwalking.txt" />
   </ItemGroup>
 </Project>

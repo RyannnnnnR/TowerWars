@@ -14,30 +14,42 @@ namespace MyGame
 			GameManager manager = new GameManager ();
 			Currency currency = new Currency (manager);
 			TeamManager teamManager = new TeamManager ();
-			DeploymentManager deployManager = new DeploymentManager (manager, currency, teamManager);
+			ErrorManager errManager = new ErrorManager ();
+			DeploymentManager deployManager = new DeploymentManager (manager, currency, teamManager, errManager);
 			GamePainter painter = new GamePainter (manager, currency);
 
-			Warrior warrior = new Warrior ();
 			//Run the game loop
 			while (false == SwinGame.WindowCloseRequested ()) {
 				//Fetch the next batch of UI interaction
 				SwinGame.ProcessEvents ();
 				painter.Paint ();
+				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
+					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY());
+				}
 				//Paint all elements on to the screen
-
 				deployManager.handleInput (SwinGame.MousePosition ());
+				//deployManager.SpawnRandomEnemy ();
 				if (teamManager.heros.Count > 0) {
 
 					foreach (Unit unit in teamManager.heros) {
-						if (unit.getName () == "ninja") {							unit.move (0.7f);
+						if (unit.getName () == "ninja") {							unit.move ();
+							unit.SetLocation (SwinGame.SpriteX (unit.Spirte) + 0.6f, Position.SPAWN_Y);
 						} else if (unit.getName () == "healer") {
-							unit.move (0.4f);
+							unit.move ();
+							unit.SetLocation (SwinGame.SpriteX (unit.Spirte) + 0.3f, Position.SPAWN_Y);
 						}
-						unit.move (0.5f);
+						unit.move ();
+						unit.SetLocation (SwinGame.SpriteX (unit.Spirte) + 0.5f, Position.SPAWN_Y);
+					}
+				}
+				if (teamManager.enemies.Count > 0) {
+
+					foreach (Unit unit in teamManager.enemies) {
+						unit.move ();
 					}
 				}
 
-					
+					errManager.handleError ();
 					currency.update ();
 					SwinGame.DrawFramerate (0, 0);
 					//SwinGame.ClearScreen ();

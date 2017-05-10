@@ -18,9 +18,8 @@ namespace MyGame
 			SwinGame.SpriteSetX (sprite, x);
 			SwinGame.SpriteSetY (sprite, y);
 		}
-		public void move (float movementSpeed) { 
-				draw ();
-				SetLocation (SwinGame.SpriteX (sprite) + movementSpeed, Position.SPAWN_Y);
+		public void move () {
+			draw ();
 		}
 		public int Price { 
 			get { return price; }
@@ -31,5 +30,9 @@ namespace MyGame
 			SwinGame.DrawSprite (sprite);
 			SwinGame.UpdateSprite (sprite);
 		}
+
+		public Sprite Spirte { get { return sprite; }}
+
 	}
+
 }

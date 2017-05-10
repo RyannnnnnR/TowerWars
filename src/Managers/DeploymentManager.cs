@@ -8,9 +8,11 @@ namespace MyGame
 		private GameManager manager;
 		private Currency currency;
 		private TeamManager teamManager;
+		private ErrorManager errManager;
 		private int delay = 300;//Spawn enemy every 5 seconds???
-		public DeploymentManager (GameManager manager, Currency currency, TeamManager teamManager)
+		public DeploymentManager (GameManager manager, Currency currency, TeamManager teamManager, ErrorManager errManager)
 		{
+			this.errManager = errManager;
 			this.manager = manager;
 			this.currency = currency;
 			this.teamManager = teamManager;
@@ -23,7 +25,8 @@ namespace MyGame
 						if (currency.Amount >= currency.PriceList [cell.Type]) {
 							return DeloyHero (cell.Type);
 						} else {
-							SwinGame.DrawText ("Not enough money", Color.Red, 100, 100); 
+							errManager.Error = Messages.ERROR_NOT_ENOUGH_MONEY;
+		 
 						}
 					}
 				}
@@ -70,10 +73,32 @@ namespace MyGame
 				return null;
 			}
 		}
-		private Unit getRandomEnemy () {
+		public void SpawnRandomEnemy () {
 			Random rand = new Random ();
-			return null;
+			delay--;
+			if (delay == 0) {
+				int spawnrate = rand.Next (100);
+				if (spawnrate > 0 && spawnrate <= 35) {
+					Ghost ghost = new Ghost ();
+					teamManager.enemies.Add (ghost);
+				} else if (spawnrate > 35 && spawnrate <= 70) {
+					Demon demon = new Demon ();
+					teamManager.enemies.Add (demon);
+				} else if (spawnrate > 70 && spawnrate <= 80) {
+					Phoenix phoenix = new Phoenix ();
+					teamManager.enemies.Add (phoenix);
+
+				} else if (spawnrate > 80 && spawnrate <= 90) {
+					Cactus cactus = new Cactus ();
+					teamManager.enemies.Add (cactus);
+				} else if (spawnrate > 90 && spawnrate <= 100) {
+					Tree tree = new Tree ();
+					teamManager.enemies.Add (tree);
+				}
+				delay = 300;
+			}
+
+			}
 		}
 
 	}
-}
