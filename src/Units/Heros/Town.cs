@@ -1,22 +1,23 @@
 ﻿using System;
 namespace MyGame
 {
-	public class Town : Unit, PhysicalAttcker
+	public class Town : Unit
 	{
-		public Town () : base("townBmp", "walkingScrpt")
+		private int dmg;
+		public Town (int dmg) : base("townBmp", "walkingScrpt", 0.40f)
 		{
+			this.dmg = dmg;
 		}
 
-		public int dmg {
+		public override int Dmg {
 			get {
-				throw new NotImplementedException ();
+				return dmg;
 			}
 
 			set {
-				throw new NotImplementedException ();
+				dmg = value;
 			}
 		}
-
 		public int attack ()
 		{
 			throw new NotImplementedException ();

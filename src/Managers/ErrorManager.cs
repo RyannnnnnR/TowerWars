@@ -10,7 +10,7 @@ namespace MyGame
 		public ErrorManager ()
 		{
 		}
-		public void handleError () {
+		public void handleErrors () {
 			delay--;
 			SwinGame.DrawText (Error, Color.Red, Position.ERROR_X, Position.ERROR_Y);
 			if (delay == 0) {

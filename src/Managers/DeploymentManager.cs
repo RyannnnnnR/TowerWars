@@ -33,18 +33,11 @@ namespace MyGame
 			}
 			return null;
 		}
-		public void DeployEnemy () {
-			delay--;
-			if (delay == 0) { 
-				
-			}
-		
-		}
 		public Unit DeloyHero (UnitType type) { 
 			switch(type){ 
 				case UnitType.Town:
 				currency.Amount -= currency.PriceList [UnitType.Town];
-				Town town = new Town ();
+				Town town = new Town (3);
 				teamManager.AddHero (town);
 				return town;
 			case UnitType.Mage:
@@ -73,7 +66,20 @@ namespace MyGame
 				return null;
 			}
 		}
-		public void SpawnRandomEnemy () {
+		public void spawnUnits () {
+			//DeployRandomEnemy ();
+			if (teamManager.heros.Count > 0) {
+					foreach (Unit unit in teamManager.heros) {
+						unit.move ();
+					}
+				}
+			if (teamManager.enemies.Count > 0) {
+				foreach (Unit unit in teamManager.enemies) {
+							unit.move ();
+						}
+					}
+		}
+		private void DeployRandomEnemy () {
 			Random rand = new Random ();
 			delay--;
 			if (delay == 0) {
@@ -89,7 +95,7 @@ namespace MyGame
 					teamManager.enemies.Add (phoenix);
 
 				} else if (spawnrate > 80 && spawnrate <= 90) {
-					Cactus cactus = new Cactus ();
+					Cactus cactus = new Cactus (3);
 					teamManager.enemies.Add (cactus);
 				} else if (spawnrate > 90 && spawnrate <= 100) {
 					Tree tree = new Tree ();

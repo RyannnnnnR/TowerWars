@@ -44,6 +44,7 @@
     <Folder Include="src\Units\" />
     <Folder Include="src\Units\Heros\" />
     <Folder Include="src\Units\Enemies\" />
+    <Folder Include="src\Units\Projectile\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\GameMain.cs" />
@@ -64,8 +65,6 @@
     <Compile Include="src\Units\UnitCell.cs" />
     <Compile Include="src\Managers\DeploymentManager.cs" />
     <Compile Include="src\Units\SpellCaster.cs" />
-    <Compile Include="src\Units\PhysicalAttcker.cs" />
-    <Compile Include="src\Units\RangedAttacker.cs" />
     <Compile Include="src\HomeTower.cs" />
     <Compile Include="src\EnemyTower.cs" />
     <Compile Include="src\Units\Heros\Healer.cs" />
@@ -80,6 +79,11 @@
     <Compile Include="src\Units\Enemies\Phoenix.cs" />
     <Compile Include="src\Units\Enemies\Ghost.cs" />
     <Compile Include="src\Units\Enemies\Demon.cs" />
+    <Compile Include="src\Managers\GarbageCollecter.cs" />
+    <Compile Include="src\Managers\ErrorManager.cs" />
+    <Compile Include="src\Managers\HealthManager.cs" />
+    <Compile Include="src\Units\Projectile\Fireball.cs" />
+    <Compile Include="src\Units\Projectile\Arrow.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">

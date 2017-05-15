@@ -1,19 +1,20 @@
 ﻿using System;
 namespace MyGame
 {
-	public class Ranger :Unit, RangedAttacker
+	public class Ranger : Unit
 	{
-		public Ranger () : base("rangerBmp", "walkingScrpt")
+		public Ranger () : base("rangerBmp", "walkingScrpt", 0.45f)
 		{
 		}
 
-		public int dmg {
+		public override int Dmg {
 			get {
 				throw new NotImplementedException ();
 			}
 
 			set {
 				throw new NotImplementedException ();
+
 			}
 		}
 

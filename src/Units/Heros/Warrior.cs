@@ -3,13 +3,13 @@ using SwinGameSDK;
 
 namespace MyGame
 {
-	public class Warrior : Unit, PhysicalAttcker
+	public class Warrior : Unit
 	{
-		public Warrior () : base ("warriorBmp", "walkingScrpt")
+		public Warrior () : base ("warriorBmp", "walkingScrpt", 0.4f)
 		{
 		}
 
-		public int dmg {
+		public override int Dmg {
 			get {
 				throw new NotImplementedException ();
 			}
@@ -25,7 +25,7 @@ namespace MyGame
 
 		public override string getName ()
 		{
-			throw new NotImplementedException ();
+			return "warrior";
 		}
 	}
 }

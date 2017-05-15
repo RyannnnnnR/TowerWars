@@ -8,13 +8,21 @@ namespace MyGame
 		public static void Main ()
 		{
 			//Open the game window
-			SwinGame.OpenGraphicsWindow ("TowerWars", 800, 600);
+			SwinGame.OpenGraphicsWindow ("TowerWars", 1200, 600);
 			SwinGame.ShowSwinGameSplashScreen ();
 			SwinGame.LoadResourceBundle ("characterbundle.txt");
 			GameManager manager = new GameManager ();
 			Currency currency = new Currency (manager);
 			TeamManager teamManager = new TeamManager ();
 			ErrorManager errManager = new ErrorManager ();
+			HealthManager healthManager = new HealthManager (teamManager);
+			CollisionManager collisionManager = new CollisionManager (teamManager, healthManager);
+			Cactus cactus = new Cactus (3);
+			Town town = new Town (3);
+			teamManager.AddHero (town);
+			teamManager.AddEnemy (cactus);
+			town.SetLocation (100, 100);
+			cactus.SetLocation (500, 100);
 			DeploymentManager deployManager = new DeploymentManager (manager, currency, teamManager, errManager);
 			GamePainter painter = new GamePainter (manager, currency);
 
@@ -24,39 +32,25 @@ namespace MyGame
 				SwinGame.ProcessEvents ();
 				painter.Paint ();
 				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
-					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY());
+					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
+				}
+				cactus.move ();
+				town.move ();
+				if (SwinGame.SpriteCollision (town.Spirte, cactus.Spirte)) {
+					Console.WriteLine ("hit");
 				}
 				//Paint all elements on to the screen
 				deployManager.handleInput (SwinGame.MousePosition ());
-				//deployManager.SpawnRandomEnemy ();
-				if (teamManager.heros.Count > 0) {
-
-					foreach (Unit unit in teamManager.heros) {
-						if (unit.getName () == "ninja") {							unit.move ();
-							unit.SetLocation (SwinGame.SpriteX (unit.Spirte) + 0.6f, Position.SPAWN_Y);
-						} else if (unit.getName () == "healer") {
-							unit.move ();
-							unit.SetLocation (SwinGame.SpriteX (unit.Spirte) + 0.3f, Position.SPAWN_Y);
-						}
-						unit.move ();
-						unit.SetLocation (SwinGame.SpriteX (unit.Spirte) + 0.5f, Position.SPAWN_Y);
-					}
-				}
-				if (teamManager.enemies.Count > 0) {
-
-					foreach (Unit unit in teamManager.enemies) {
-						unit.move ();
-					}
-				}
-
-					errManager.handleError ();
-					currency.update ();
-					SwinGame.DrawFramerate (0, 0);
-					//SwinGame.ClearScreen ();
+				//deployManager.spawnUnits ();
+				//collisionManager.handleCollisions ();
+				healthManager.updateHealth ();
+				errManager.handleErrors ();
+				currency.update ();
+				SwinGame.DrawFramerate (0, 0);
 
 					//Draw onto the screen
 					SwinGame.RefreshScreen (60);
+				}
 			}
 		}
-	}
 }

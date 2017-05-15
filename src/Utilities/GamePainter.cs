@@ -26,7 +26,6 @@ namespace MyGame
 		private UnitCell ninjaCell;
 		private UnitCell healerCell;
 		private Currency currency;
-		private Town warrior = new Town ();
 		private HomeTower t = new HomeTower ();
 		private EnemyTower et = new EnemyTower ();
 		public GamePainter (GameManager manager, Currency currency)
@@ -66,6 +65,7 @@ namespace MyGame
 
 		public void paintBackground () {
 			SwinGame.DrawBitmap (background, 0, 0);
+			SwinGame.DrawBitmap (background, 800, 0);
 		}
 		public void paintEnemeyBase (int x, int y)
 		{

@@ -3,8 +3,18 @@ namespace MyGame
 {
 	public class Mage : Unit, SpellCaster
 	{
-		public Mage () :base("mageBmp", "walkingScrpt")
+		public Mage () : base ("mageBmp", "walkingScrpt", 0.4f)
 		{
+		}
+
+		public override int Dmg {
+			get {
+				throw new NotImplementedException ();
+			}
+
+			set {
+				throw new NotImplementedException ();
+			}
 		}
 
 		public int Mana {
@@ -17,15 +27,6 @@ namespace MyGame
 			}
 		}
 
-		public int spellDmg {
-			get {
-				throw new NotImplementedException ();
-			}
-
-			set {
-				throw new NotImplementedException ();
-			}
-		}
 
 		public void Cast ()
 		{
