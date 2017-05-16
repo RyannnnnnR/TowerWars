@@ -13,9 +13,8 @@ namespace MyGame
 		{
 			sprite = SwinGame.CreateSprite (SwinGame.BitmapNamed (bitmap), SwinGame.AnimationScriptNamed (animation));
 			SetLocation (Position.SPAWN_X, Position.SPAWN_Y);
+			SwinGame.SpriteStartAnimation (sprite, "walking_loop");
 			SwinGame.SpriteSetDX (sprite, movementSpeed);
-			SwinGame.SpriteSetDY (sprite, 0);
-			SwinGame.SpriteStartAnimation (sprite, "walking_loop");//Cause of exception?
 		}
 		public void SetLocation (float x, float y) {
 			SwinGame.SpriteSetX (sprite, x);

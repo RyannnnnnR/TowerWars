@@ -4,12 +4,13 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Units\Unit.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Units\Heros\Town.cs">
     <Files>
       <File FileName="src\Managers\CollisionManager.cs" Line="26" Column="1" />
-      <File FileName="src\GameMain.cs" Line="39" Column="27" />
+      <File FileName="src\GameMain.cs" Line="21" Column="5" />
       <File FileName="src\Managers\DeploymentManager.cs" Line="69" Column="15" />
-      <File FileName="src\Units\Unit.cs" Line="16" Column="47" />
+      <File FileName="src\Units\Unit.cs" Line="17" Column="49" />
+      <File FileName="src\Units\Heros\Town.cs" Line="4" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />
