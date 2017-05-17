@@ -8,17 +8,18 @@ namespace MyGame
 		public static void Main ()
 		{
 			//Open the game window
-			SwinGame.OpenGraphicsWindow ("TowerWars", 1200, 600);
+			SwinGame.OpenGraphicsWindow ("TowerWars", 800, 600);
 			SwinGame.ShowSwinGameSplashScreen ();
 			SwinGame.LoadResourceBundle ("characterbundle.txt");
 			GameManager manager = new GameManager ();
 			Currency currency = new Currency (manager);
 			TeamManager teamManager = new TeamManager ();
 			ErrorManager errManager = new ErrorManager ();
+
 			HealthManager healthManager = new HealthManager (teamManager);
 			CollisionManager collisionManager = new CollisionManager (teamManager, healthManager);
-			Cactus cactus = new Cactus (3);
-			Town town = new Town (3);
+			Cactus cactus = new Cactus (0);
+			Town town = new Town (10);
 			teamManager.AddHero (town);
 			teamManager.AddEnemy (cactus);
 			town.SetLocation (100, 100);
@@ -31,18 +32,14 @@ namespace MyGame
 				//Fetch the next batch of UI interaction
 				SwinGame.ProcessEvents ();
 				painter.Paint ();
+				Console.WriteLine (teamManager.heros.Count);
 				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
 					Console.WriteLine (SwinGame.MouseX () + " " + SwinGame.MouseY ());
 				}
-				cactus.move ();
-				town.move ();
-				if (SwinGame.SpriteCollision (town.Spirte, cactus.Spirte)) {
-					Console.WriteLine ("hit");
-				}
 				//Paint all elements on to the screen
 				deployManager.handleInput (SwinGame.MousePosition ());
-				//deployManager.spawnUnits ();
-				//collisionManager.handleCollisions ();
+				deployManager.spawnUnits ();
+				collisionManager.handleCollisions ();
 				healthManager.updateHealth ();
 				errManager.handleErrors ();
 				currency.update ();

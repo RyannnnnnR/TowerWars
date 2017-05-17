@@ -3,13 +3,13 @@ namespace MyGame
 {
 	public class Town : Unit
 	{
-		private int dmg;
-		public Town (int dmg) : base("townBmp", "walkingScrpt", 0.40f)
+		private float dmg;
+		public Town (int dmg) : base("townBmp", "walkingScrpt", 0.40f, 5)
 		{
 			this.dmg = dmg;
 		}
 
-		public override int Dmg {
+		public override float Dmg {
 			get {
 				return dmg;
 			}

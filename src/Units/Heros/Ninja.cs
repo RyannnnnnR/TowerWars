@@ -8,7 +8,7 @@ namespace MyGame
 		{
 		}
 
-		public override int Dmg {
+		public override float Dmg {
 			get {
 				throw new NotImplementedException ();
 			}

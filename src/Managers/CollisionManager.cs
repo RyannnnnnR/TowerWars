@@ -21,13 +21,15 @@ namespace MyGame
 						if(SwinGame.SpriteCollision(heros.Spirte, enemies.Spirte)) {
 							int hit = random.Next (2);//Battle interaction - who hit who
 							if (hit == 0) {
-								int dmg = heros.Dmg;
+								float dmg = heros.Dmg;
 								healthManager.handleUnitDamage (enemies, dmg);
-								enemies.SetLocation (SwinGame.SpriteX(enemies.Spirte) + 40.0f, Position.SPAWN_Y);//Knockback
+								//Console.WriteLine (heros.getName () + heros.Health);
+								enemies.SetLocation (SwinGame.SpriteX(enemies.Spirte) + 30.0f, Position.SPAWN_Y);//Knockback
 							} else {
-								int dmg = enemies.Dmg;
+								float dmg = enemies.Dmg;
 								healthManager.handleUnitDamage (heros, dmg);
-								heros.SetLocation (SwinGame.SpriteX(heros.Spirte) - 40.0f, Position.SPAWN_Y);
+								//Console.WriteLine (enemies.getName () + enemies.Health);
+								heros.SetLocation (SwinGame.SpriteX(heros.Spirte) - 30.0f, Position.SPAWN_Y);
 							}
 						}
 					}

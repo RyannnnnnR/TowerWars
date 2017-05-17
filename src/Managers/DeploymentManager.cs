@@ -37,7 +37,7 @@ namespace MyGame
 			switch(type){ 
 				case UnitType.Town:
 				currency.Amount -= currency.PriceList [UnitType.Town];
-				Town town = new Town (3);
+				Town town = new Town (10);
 				teamManager.AddHero (town);
 				return town;
 			case UnitType.Mage:

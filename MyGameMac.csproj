@@ -60,8 +60,6 @@
     <Compile Include="src\Managers\GameManager.cs" />
     <Compile Include="src\Managers\LevelManager.cs" />
     <Compile Include="src\Managers\TeamManager.cs" />
-    <Compile Include="src\Units\PhysicalAttcker.cs" />
-    <Compile Include="src\Units\RangedAttacker.cs" />
     <Compile Include="src\Units\SpellCaster.cs" />
     <Compile Include="src\Units\Unit.cs" />
     <Compile Include="src\Units\UnitCell.cs" />
@@ -84,6 +82,9 @@
     <Compile Include="src\Units\Heros\Town.cs" />
     <Compile Include="src\Managers\ErrorManager.cs" />
     <Compile Include="src\Managers\GarbageCollecter.cs" />
+    <Compile Include="src\Managers\HealthManager.cs" />
+    <Compile Include="src\Units\Projectile\Arrow.cs" />
+    <Compile Include="src\Units\Projectile\Fireball.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
