@@ -3,19 +3,8 @@ namespace MyGame
 {
 	public class Ranger : Unit
 	{
-		public Ranger () : base("rangerBmp", "walkingScrpt", 0.45f)
+		public Ranger () : base("rangerBmp", "walkingScrpt", 0.45f, 10, false)
 		{
-		}
-
-		public override float Dmg {
-			get {
-				throw new NotImplementedException ();
-			}
-
-			set {
-				throw new NotImplementedException ();
-
-			}
 		}
 
 		public void attack ()

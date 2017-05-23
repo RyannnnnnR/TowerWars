@@ -4,18 +4,8 @@ namespace MyGame
 	//Ranged or physical????
 	public class Ninja : Unit
 	{
-	public Ninja () :base("ninjaBmp", "ninjaRunninScrpt", 0.5f)
+	public Ninja () :base("ninjaBmp", "ninjaRunninScrpt", 0.5f, 20, false)
 		{
-		}
-
-		public override float Dmg {
-			get {
-				throw new NotImplementedException ();
-			}
-
-			set {
-				throw new NotImplementedException ();
-			}
 		}
 
 		public override string getName ()

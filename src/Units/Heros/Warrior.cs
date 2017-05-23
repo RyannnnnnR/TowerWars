@@ -5,19 +5,10 @@ namespace MyGame
 {
 	public class Warrior : Unit
 	{
-		public Warrior () : base ("warriorBmp", "walkingScrpt", 0.4f)
+		public Warrior () : base ("warriorBmp", "walkingScrpt", 0.4f, 15, false)
 		{
 		}
 
-		public override float Dmg {
-			get {
-				throw new NotImplementedException ();
-			}
-
-			set {
-				throw new NotImplementedException ();
-			}
-		}
 		public int attack ()
 		{
 			throw new NotImplementedException ();

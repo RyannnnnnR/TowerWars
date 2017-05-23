@@ -3,19 +3,10 @@ namespace MyGame
 {
 	public class Phoenix : Unit
 	{
-		public Phoenix () : base ("monster_phoenix.png", "phoenixflying.txt", -0.5f)
+		public Phoenix () : base ("phoenixBmp", "walkingScrpt", -0.5f, 5, true)
 		{
 		}
 
-		public override float Dmg {
-			get {
-				throw new NotImplementedException ();
-			}
-
-			set {
-				throw new NotImplementedException ();
-			}
-		}
 
 		public override string getName ()
 		{

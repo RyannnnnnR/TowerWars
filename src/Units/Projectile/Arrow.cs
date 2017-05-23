@@ -1,9 +1,9 @@
 ﻿using System;
 namespace MyGame
 {
-	public class Arrow
+	public class Arrow : Projectile
 	{
-		public Arrow ()
+		public Arrow () : base(null, null, 0, 0, 0, null)
 		{
 		}
 	}

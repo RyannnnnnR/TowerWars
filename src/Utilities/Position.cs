@@ -33,8 +33,10 @@ namespace MyGame
 		public const int ERROR_X = 332;
 		public const int ERROR_Y = 44;
 
-		public const int SPAWN_X = 100;
-		public const int SPAWN_Y = 100;
+		public const int HERO_SPAWN_X = 30;
+		public const int HERO_SPAWN_Y = 510;
+		public const int ENEMY_SPAWN_X = 710;
+		public const int ENEMY_SPAWN_Y = 500;
 		public const int LABEL_Y = 67;
 	}
 

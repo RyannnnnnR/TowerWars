@@ -1,0 +1,10 @@
+﻿TODO:
+
+1. Levels
+2. Healer healing - with effect
+3. Ranger arrows
+4. Confetti??? - if time
+5. Camera
+6. Animations for enemies
+7. Death Effects?
+8. Garbage collector

@@ -70,12 +70,17 @@ namespace MyGame
 			//DeployRandomEnemy ();
 			if (teamManager.heros.Count > 0) {
 					foreach (Unit unit in teamManager.heros) {
-						unit.move ();
+						unit.draw ();
+					if (unit.getName () == "mage") {
+						if ((unit as Mage).fireball != null) {
+							(unit as Mage).fireball.draw ();
+						}
+					}
 					}
 				}
 			if (teamManager.enemies.Count > 0) {
 				foreach (Unit unit in teamManager.enemies) {
-							unit.move ();
+							unit.draw ();
 						}
 					}
 		}
@@ -85,10 +90,10 @@ namespace MyGame
 			if (delay == 0) {
 				int spawnrate = rand.Next (100);
 				if (spawnrate > 0 && spawnrate <= 35) {
-					Ghost ghost = new Ghost ();
+					Lizard ghost = new Lizard ();
 					teamManager.enemies.Add (ghost);
 				} else if (spawnrate > 35 && spawnrate <= 70) {
-					Demon demon = new Demon ();
+					Minotaur demon = new Minotaur ();
 					teamManager.enemies.Add (demon);
 				} else if (spawnrate > 70 && spawnrate <= 80) {
 					Phoenix phoenix = new Phoenix ();

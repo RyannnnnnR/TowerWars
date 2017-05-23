@@ -6,16 +6,23 @@ namespace MyGame
 	public abstract class Unit
 	{
 		private float health = 100.00f;
-		private int price;
 		private Sprite sprite;
-		private float movementSpeeed;
+		private float movementSpeeed = 0.0f;
 		private float dmg;
-		public Unit (string bitmap, string animation, float movementSpeed, float dmg)
+		public Unit (string bitmap, string animation, float movementSpeed, float dmg, bool enemy)
 		{
 			this.movementSpeeed = movementSpeed;
-			sprite = SwinGame.CreateSprite (SwinGame.BitmapNamed (bitmap), SwinGame.AnimationScriptNamed (animation));
-			SetLocation (Position.SPAWN_X, Position.SPAWN_Y);
+			sprite = SwinGame.CreateSprite (SwinGame.BitmapNamed (bitmap), SwinGame.AnimationScriptNamed(animation));
 			SwinGame.SpriteStartAnimation (sprite, "walking_loop");
+
+			if (enemy) {
+				SwinGame.SpriteSetX (sprite, Position.ENEMY_SPAWN_X);
+				SwinGame.SpriteSetY (sprite, Position.ENEMY_SPAWN_Y);
+			} else {
+				SwinGame.SpriteSetX (sprite, Position.HERO_SPAWN_X);
+				SwinGame.SpriteSetY (sprite, Position.HERO_SPAWN_Y);
+			}
+
 			SwinGame.SpriteSetDX (sprite, movementSpeed);
 			this.dmg = dmg;
 		}
@@ -30,16 +37,9 @@ namespace MyGame
 		{
 			return SwinGame.SpriteY (sprite);
 		}
-		public void move () {
-			draw ();
-		}
 		public float Dmg { get { return dmg;} set { dmg = value;} }//Delete dmg from child classes
-		public int Price { 
-			get { return price; }
-			set { price = value;}
-		}
 		public abstract string getName ();
-		public void draw () { 
+		public void draw () {
 			SwinGame.DrawSprite (sprite);
 			SwinGame.UpdateSprite (sprite);
 		}

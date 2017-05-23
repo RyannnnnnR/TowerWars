@@ -24,6 +24,14 @@ namespace MyGame
 				return unitcells;
 			}
 		}
-
+		public void handleGameState () {
+			if (State == GameState.Running) {
+				//Game running
+			} else if (State == GameState.Dormant) {
+				//Tranisioning levels
+			} else if (State == GameState.Ended) { 
+				//End of Game
+			}
+		}
 	}
 }

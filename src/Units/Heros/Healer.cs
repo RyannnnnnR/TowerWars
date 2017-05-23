@@ -3,19 +3,10 @@ namespace MyGame
 {
 	public class Healer : Unit, SpellCaster
 	{
-		public Healer () :base("healerBmp", "healerWalkingScrpt", 0.3f)
+		public Healer () : base ("healerBmp", "healerWalkingScrpt", 0.3f, 0, false)
 		{
 		}
 
-		public override float Dmg {
-			get {
-				throw new NotImplementedException ();
-			}
-
-			set {
-				throw new NotImplementedException ();
-			}
-		}
 
 		public int Mana {
 			get {

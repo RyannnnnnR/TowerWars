@@ -7,7 +7,7 @@ namespace MyGame
 {
 	public class Currency
 	{
-		private int amount = 10;
+		private int amount = 100;
 		private int delay = 60;
 		private Dictionary<UnitType, int> pricelist = new Dictionary<UnitType, int> ();
 		private GameManager manager;

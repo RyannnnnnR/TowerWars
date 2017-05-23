@@ -51,7 +51,6 @@
     <Compile Include="src\Tower.cs" />
     <Compile Include="src\Level.cs" />
     <Compile Include="src\Managers\CollisionManager.cs" />
-    <Compile Include="src\Managers\CooldownManager.cs" />
     <Compile Include="src\Managers\LevelManager.cs" />
     <Compile Include="src\Managers\TeamManager.cs" />
     <Compile Include="src\Utilities\GamePainter.cs" />
@@ -77,13 +76,15 @@
     <Compile Include="src\Units\Enemies\Tree.cs" />
     <Compile Include="src\Units\Enemies\Cactus.cs" />
     <Compile Include="src\Units\Enemies\Phoenix.cs" />
-    <Compile Include="src\Units\Enemies\Ghost.cs" />
-    <Compile Include="src\Units\Enemies\Demon.cs" />
+    <Compile Include="src\Units\Enemies\Minotaur.cs" />
+    <Compile Include="src\Units\Enemies\Lizard.cs" />
     <Compile Include="src\Managers\GarbageCollecter.cs" />
     <Compile Include="src\Managers\ErrorManager.cs" />
     <Compile Include="src\Managers\HealthManager.cs" />
     <Compile Include="src\Units\Projectile\Fireball.cs" />
     <Compile Include="src\Units\Projectile\Arrow.cs" />
+    <Compile Include="src\Units\Projectile\Projectile.cs" />
+    <Compile Include="src\Utilities\MovementDirection.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="SwinGame">
@@ -232,8 +233,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\.DS_Store" />
-    <None Include="Resources\images\fireball.png" />
-    <None Include="Resources\images\monster4.png">
+    <None Include="Resources\images\fireball.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\monster_cacto.png">
@@ -249,6 +249,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\spells.png" />
+    <None Include="Resources\animations\fireball.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="src\TODO.txt" />
+    <None Include="Resources\animations\demonwalking.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\animations\ghostwalking.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\monster_lizardman2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\monster_minotaur.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <Target Name="CopyLibsToOut">
     <Copy SourceFiles="@(WinLibs)" DestinationFolder="$(OutDir)" />

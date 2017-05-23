@@ -5,7 +5,7 @@ namespace MyGame
 {
 	public class Tower
 	{
-		private int health = 100;
+		private float health = 300.00f;
 		private int x;
 		private int y;
 		public Tower (int x, int y)
@@ -14,7 +14,7 @@ namespace MyGame
 			this.y = y;
 		}
 
-		public int Health {
+		public float Health {
 
 			get {return health;}
 			set {health = value; }

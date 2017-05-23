@@ -96,10 +96,7 @@ namespace MyGame
 		}
 		public void Paint () {
 			paintBackground ();
-			paintHomeBase (Position.HOME_BASE_X, Position.HOME_BASE_Y);
 			SwinGame.DrawBitmap (coin, Position.COIN_X, Position.COIN_Y);
-			//warrior.move (0.5f);
-			paintEnemeyBase (Position.ENEMY_BASE_X, Position.ENEMY_BASE_Y);
 			drawUnitCells ();
 		}
 

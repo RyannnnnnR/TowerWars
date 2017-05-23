@@ -11,10 +11,10 @@ namespace MyGame
 		private List<Unit> deadEnemies;
 		private HomeTower home;
 		private EnemyTower enemy;
-		public HealthManager (TeamManager manager)
+		public HealthManager (TeamManager manager, HomeTower home, EnemyTower enemy)
 		{
-			home = new HomeTower ();
-			enemy = new EnemyTower ();
+			this.home = home;
+			this.enemy = enemy;
 			this.manager = manager;
 			deadHeros = new List<Unit> ();
 			deadEnemies = new List<Unit> ();
@@ -27,20 +27,19 @@ namespace MyGame
 				unit.Health -= dmg * 1.25f;
 			}
 		}
-		public void handleTowerDamage (Tower tower, int dmg) {
+		public void handleTowerDamage (Tower tower, float dmg) {
 			tower.Health -= dmg;
 		}
 		public void updateHealth ()
 		{
-			drawHealthBar (home.Health, home.X+5, home.Y - 5);
-			drawHealthBar (enemy.Health, enemy.X+5, enemy.Y - 5);
+			drawTowerHealthBar (home.Health, home.X+5, home.Y - 5);
+			drawTowerHealthBar (enemy.Health, enemy.X+5, enemy.Y - 5);
 			if (manager.heros.Count > 0) {
 				foreach (Unit unit in manager.heros) {
 					if (unit.Health <= 0) {
 							deadHeros.Add (unit);
 						}
 						drawHealthBar (unit.Health, unit.getX (), unit.getY () + 40);
-						Console.WriteLine (unit.getName () + unit.Health);
 					}
 				}
 				if (manager.enemies.Count > 0) {
@@ -51,10 +50,8 @@ namespace MyGame
 						}
 
 						drawHealthBar (unit.Health, unit.getX () + 8, unit.getY () + 60);
-						Console.WriteLine (unit.getName () + unit.Health);
 					}
 				}
-			//Maybe draw a 'soul' to indicate death?
 			if (deadHeros.Count > 0) {
 				foreach (Unit dead in deadHeros) {
 					manager.heros.Remove (dead);
@@ -66,7 +63,14 @@ namespace MyGame
 			}
 		}
 		}
+		public void drawTowerHealthBar (float health, float x, float y) { 
+			health /= 300.0f;
+			float length = 30.0f * health;
+			float dmg = 30.0f - length;
+			SwinGame.FillRectangle (Color.LimeGreen, x, y, length, 3);
+			SwinGame.FillRectangle (Color.Red, x + length, y, dmg, 3);
 
+		}
 		public void drawHealthBar (float health, float x, float y)
 		{
 			

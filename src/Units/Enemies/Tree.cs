@@ -3,19 +3,10 @@ namespace MyGame
 {
 	public class Tree : Unit
 	{
-		public Tree () : base("monster_treant.png", "cactowalking.png", -0.5f)
+		public Tree () : base("treeBmp", "walkingScrpt", -0.5f, 5, true)
 		{
 		}
 
-		public override float Dmg {
-			get {
-				throw new NotImplementedException ();
-			}
-
-			set {
-				throw new NotImplementedException ();
-			}
-		}
 
 		public override string getName ()
 		{
