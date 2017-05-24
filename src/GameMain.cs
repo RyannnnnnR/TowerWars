@@ -22,24 +22,15 @@ namespace MyGame
 			DeploymentManager deployManager = new DeploymentManager (manager, currency, teamManager, errManager);
 			GamePainter painter = new GamePainter (manager, currency);
 			Cactus cact = new Cactus (0);
-			cact.Health = 50;
-			teamManager.AddEnemy (cact);
+			cact.Health = 10;
+			//teamManager.AddEnemy (cact);
 			//Run the game loop
 			while (false == SwinGame.WindowCloseRequested ()) {
 				//Fetch the next batch of UI interaction
 				SwinGame.ProcessEvents ();
 				painter.Paint ();
 				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
-					foreach (Unit heros in teamManager.heros) {
-						foreach (Unit enemies in teamManager.enemies) {
-							if (heros.getName () == "mage") {
-								(heros as Mage).Cast ();
-							}
-							if (heros.getName () == "ranger") {
-								//(heros as Ranger).Cast ();
-							}
-						}
-					}
+					Console.WriteLine ("HCount:" + teamManager.heros.Count + "Ecount:" + teamManager.enemies.Count);
 				}
 				//Paint all elements on to the screen
 				deployManager.handleInput (SwinGame.MousePosition ());

@@ -25,10 +25,11 @@ namespace MyGame
 			handleCollisionBetweenEntities ();
 			handleCollisionsBetweenTowerAndEntity ();
 		}
-		private void handleCollisionBetweenEntities () {
-				if (manager.heros.Count > 0 && manager.enemies.Count > 0) {
-					foreach (Unit heros in manager.heros) {
-						foreach (Unit enemies in manager.enemies) {
+		private void handleCollisionBetweenEntities ()
+		{
+			if (manager.heros.Count > 0 && manager.enemies.Count > 0) {
+				foreach (Unit heros in manager.heros) {
+					foreach (Unit enemies in manager.enemies) {
 						if (detectCollision (heros, enemies)) {//Spoof collision detection
 							int hit = random.Next (2);//Battle interaction - who hit who
 							if (hit == 0) {
@@ -44,38 +45,31 @@ namespace MyGame
 						if (heros.getName () == "mage") {
 							Mage mage = heros as Mage;
 							if (mage.inRange (enemies)) {
-								Console.WriteLine ("In range: " + enemies.getName ());
 								mage.Cast ();
 								if (SwinGame.SpriteDX (mage.Spirte) != 0) {
-									Console.WriteLine ("set to 0");
 									SwinGame.SpriteSetDX (mage.Spirte, 0);
 								}
 								if (detectCollision (mage.fireball, enemies)) {
-									enemies.SetLocation (SwinGame.SpriteX (enemies.Spirte) + 30.0f, Position.ENEMY_SPAWN_Y);
+									enemies.SetLocation (SwinGame.SpriteX (enemies.Spirte) + 15.0f, Position.ENEMY_SPAWN_Y);
 									mage.fireball = null;
 									healthManager.handleUnitDamage (enemies, mage.SpellDmg);
 
 								}
-								if (manager.enemies.Count == 0) {
-										Console.WriteLine ("No enemies");
-									}
-							}
-							if (!mage.inRange (enemies)) {
+							}else if (!mage.inRange (enemies)) {
 								if (SwinGame.SpriteDX (mage.Spirte) == 0) {
 									Console.WriteLine ("set to 0.4");
 									SwinGame.SpriteSetDX (mage.Spirte, 0.4f);
 								}
 							}
-						}
 
 						}
 					}
 				}
-				}
+			}
+		}
 		private void handleCollisionsBetweenTowerAndEntity () {
-			delay--;
-			if (delay == 0) {//Check every second to balance dmg
 				if (manager.enemies.Count > 0 && manager.heros.Count == 0) {
+					Console.WriteLine ("Called 1");
 					foreach (Unit enemies in manager.enemies) {
 						if (detectCollision (enemies, home, MovementDirection.Left)) {
 							SwinGame.SpriteSetDX (enemies.Spirte, 0);
@@ -85,19 +79,38 @@ namespace MyGame
 							}
 						}
 					}
-				} else if (manager.enemies.Count == 0 && manager.heros.Count > 0) {
+				} 
+
+				if(manager.enemies.Count == 0 && manager.heros.Count > 0) {
 					foreach (Unit heros in manager.heros) {
-						if (detectCollision (heros, enemy, MovementDirection.Right)) {
-							SwinGame.SpriteSetDX (heros.Spirte, 0);
-							healthManager.handleTowerDamage (enemy, heros.Dmg * 0.25f);
-							if (enemy.Health <= 0) {
-								gameManager.State = GameState.Ended;
+						if (heros.getName () == "mage") {
+							Mage mage = heros as Mage;
+							if (mage.inRange (enemy)) {
+								mage.Cast ();
+								Console.WriteLine (mage.fireball.Sprite.X);
+								if (SwinGame.SpriteDX (mage.Spirte) != 0) {
+									SwinGame.SpriteSetDX (mage.Spirte, 0);
+								}
+								if (detectCollision (mage.fireball, enemy)) {
+									mage.fireball = null;
+									healthManager.handleTowerDamage (enemy, mage.SpellDmg);
+
+								}
+							} else if (!mage.inRange (enemy)) {
+								if (SwinGame.SpriteDX (mage.Spirte) == 0) {
+									SwinGame.SpriteSetDX (mage.Spirte, 0.4f);
+								}
+							}
+						}
+							if (detectCollision (heros, enemy, MovementDirection.Right)) {
+								SwinGame.SpriteSetDX (heros.Spirte, 0);
+								healthManager.handleTowerDamage (enemy, heros.Dmg * 0.10f);
+								if (enemy.Health <= 0) {
+									gameManager.State = GameState.Ended;
 							}
 						}
 					}
 				}
-				delay = 30;
-			}
 		}
 
 		public bool detectCollision (Unit hero, Unit enemy) {
@@ -113,7 +126,7 @@ namespace MyGame
 		}
 		public bool detectCollision (Projectile projectile,  Unit enemy)
 		{
-			return projectile.X+10 >= enemy.getX ();
+			return projectile.X+20 >= enemy.getX ();
 		}
 		public bool detectCollision (Projectile friendly, Projectile hostile)
 		{
@@ -121,7 +134,7 @@ namespace MyGame
 		}
 		public bool detectCollision (Projectile projectile, Tower tower)
 		{
-			return true;
+			return projectile.X+50 >= tower.X;
 		}
 
 		

@@ -1,0 +1,11 @@
+SwinGame Animation #v1
+
+
+f:0,0,6,1
+
+f:1,1,6,2
+
+f:2,2,6,0
+
+
+i:walking_loop,0

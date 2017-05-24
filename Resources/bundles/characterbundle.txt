@@ -15,5 +15,3 @@ ANIM,walkingScrpt,walking.txt
 ANIM,healerWalkingScrpt,healerwalking.txt
 ANIM,ninjaRunningScrpt,ninjarunning.txt
 ANIM,fireballScrpt,fireball.txt
-ANIM,demonWalkingScrpt,demonwalking.txt
-ANIM,ghostWalkingScrpt,ghostwalking.txt

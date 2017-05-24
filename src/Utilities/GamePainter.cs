@@ -84,13 +84,18 @@ namespace MyGame
 			townCell.drawCell ();
 			mageCell.drawCell ();
 			rangerCell.drawCell ();
+			ninjaCell.drawCell ();
+			healerCell.drawCell ();
 			Bitmap availTown = currency.Amount >= 10 ? town : utown;
 			Bitmap availRanger = currency.Amount >= 25 ? ranger : uranger;
 			Bitmap availMage = currency.Amount >= 35 ? mage : umage;
-
+			Bitmap availNinja = currency.Amount >= 55 ? ninja : uninja;
+			Bitmap availHealer = currency.Amount >= 45 ? healer : uhealer;
 			SwinGame.DrawBitmap (availTown, Position.TOWN_IMAGE_X, Position.IMAGE_Y);
 			SwinGame.DrawBitmap (availRanger, Position.RANGER_IMAGE_X, Position.IMAGE_Y);
 			SwinGame.DrawBitmap (availMage, Position.MAGE_IMAGE_X, Position.IMAGE_Y);
+			SwinGame.DrawBitmap (availNinja, Position.NINJA_IMAGE_X, Position.IMAGE_Y);
+			SwinGame.DrawBitmap (availHealer, Position.HEALER_IMAGE_X, Position.IMAGE_Y);
 			//Add cells to list in game (interactions) manager.
 
 		}

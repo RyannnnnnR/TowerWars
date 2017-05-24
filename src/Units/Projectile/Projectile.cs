@@ -5,16 +5,14 @@ namespace MyGame
 {
 	public class Projectile
 	{
-		private float x;
 		private float y;
 		private float projectileSpeed;
 		private Sprite sprite;
 		private Unit unit;
 
-		public Projectile (string bitmap, string animation, float x, float y, float projectileSpeed, Unit unit)
+		public Projectile (string bitmap, string animation,  float y, float projectileSpeed, Unit unit)
 		{
 			this.unit = unit;
-			this.x = x;
 			this.y = y;
 			this.projectileSpeed = projectileSpeed;
 			sprite = SwinGame.CreateSprite (SwinGame.BitmapNamed (bitmap), SwinGame.AnimationScriptNamed(animation));
