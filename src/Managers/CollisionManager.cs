@@ -41,6 +41,33 @@ namespace MyGame
 								heros.SetLocation (SwinGame.SpriteX (heros.Spirte) - 30.0f, Position.HERO_SPAWN_Y);
 							}
 						}
+						if (heros.getName () == "mage") {
+							Mage mage = heros as Mage;
+							if (mage.inRange (enemies)) {
+								Console.WriteLine ("In range: " + enemies.getName ());
+								mage.Cast ();
+								if (SwinGame.SpriteDX (mage.Spirte) != 0) {
+									Console.WriteLine ("set to 0");
+									SwinGame.SpriteSetDX (mage.Spirte, 0);
+								}
+								if (detectCollision (mage.fireball, enemies)) {
+									enemies.SetLocation (SwinGame.SpriteX (enemies.Spirte) + 30.0f, Position.ENEMY_SPAWN_Y);
+									mage.fireball = null;
+									healthManager.handleUnitDamage (enemies, mage.SpellDmg);
+
+								}
+								if (manager.enemies.Count == 0) {
+										Console.WriteLine ("No enemies");
+									}
+							}
+							if (!mage.inRange (enemies)) {
+								if (SwinGame.SpriteDX (mage.Spirte) == 0) {
+									Console.WriteLine ("set to 0.4");
+									SwinGame.SpriteSetDX (mage.Spirte, 0.4f);
+								}
+							}
+						}
+
 						}
 					}
 				}
@@ -86,7 +113,7 @@ namespace MyGame
 		}
 		public bool detectCollision (Projectile projectile,  Unit enemy)
 		{
-			return projectile.X >= enemy.getX ();
+			return projectile.X+10 >= enemy.getX ();
 		}
 		public bool detectCollision (Projectile friendly, Projectile hostile)
 		{

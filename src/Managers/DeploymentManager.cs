@@ -71,11 +71,6 @@ namespace MyGame
 			if (teamManager.heros.Count > 0) {
 					foreach (Unit unit in teamManager.heros) {
 						unit.draw ();
-					if (unit.getName () == "mage") {
-						if ((unit as Mage).fireball != null) {
-							(unit as Mage).fireball.draw ();
-						}
-					}
 					}
 				}
 			if (teamManager.enemies.Count > 0) {

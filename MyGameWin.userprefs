@@ -4,10 +4,10 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.Workbench ActiveDocument="src\Managers\GameManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="src\Managers\CollisionManager.cs">
     <Files>
-      <File FileName="src\Managers\DeploymentManager.cs" Line="70" Column="6" />
-      <File FileName="src\Managers\CollisionManager.cs" Line="7" Column="15" />
+      <File FileName="src\Managers\DeploymentManager.cs" Line="75" Column="6" />
+      <File FileName="src\Managers\CollisionManager.cs" Line="61" Column="11" />
       <File FileName="src\Managers\HealthManager.cs" Line="42" Column="68" />
       <File FileName="src\Tower.cs" Line="8" Column="27" />
       <File FileName="src\Units\Enemies\Tree.cs" Line="6" Column="33" />
@@ -22,7 +22,12 @@
       <File FileName="src\Units\Heros\Town.cs" Line="9" Column="74" />
       <File FileName="src\Units\Heros\Warrior.cs" Line="8" Column="74" />
       <File FileName="src\Managers\GameManager.cs" Line="33" Column="18" />
-      <File FileName="src\GameMain.cs" Line="13" Column="56" />
+      <File FileName="src\GameMain.cs" Line="25" Column="21" />
+      <File FileName="src\Units\Heros\Mage.cs" Line="6" Column="12" />
+      <File FileName="src\Units\SpellCaster.cs" Line="5" Column="3" />
+      <File FileName="src\Units\Heros\Healer.cs" Line="31" Column="21" />
+      <File FileName="src\Units\Projectile\Fireball.cs" Line="6" Column="107" />
+      <File FileName="src\Units\Projectile\Projectile.cs" Line="28" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MultiItemStartupConfigurations />

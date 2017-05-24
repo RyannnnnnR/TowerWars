@@ -9,9 +9,11 @@ namespace MyGame
 		private float y;
 		private float projectileSpeed;
 		private Sprite sprite;
+		private Unit unit;
 
 		public Projectile (string bitmap, string animation, float x, float y, float projectileSpeed, Unit unit)
 		{
+			this.unit = unit;
 			this.x = x;
 			this.y = y;
 			this.projectileSpeed = projectileSpeed;
@@ -23,13 +25,16 @@ namespace MyGame
 		}
 		public float X {
 			get {
-				return x;
+				return SwinGame.SpriteX(sprite);
 			}
 		}
 		public void draw ()
 		{
 			SwinGame.DrawSprite (sprite);
 			SwinGame.UpdateSprite (sprite);
+		}
+		public Sprite Sprite {
+			get { return sprite; }
 		}
 		public float Y {
 			get {
