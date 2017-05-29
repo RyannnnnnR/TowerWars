@@ -3,13 +3,16 @@ using SwinGameSDK;
 
 namespace MyGame
 {
+	/// <summary>
+	/// A class used to deploy hero and enemy characters
+	/// </summary>
 	public class DeploymentManager
 	{
 		private GameManager manager;
 		private Currency currency;
 		private TeamManager teamManager;
 		private ErrorManager errManager;
-		private int delay = 300;//Spawn enemy every 5 seconds???
+		private int delay = 600;//Spawn enemy every 10 seconds
 		public DeploymentManager (GameManager manager, Currency currency, TeamManager teamManager, ErrorManager errManager)
 		{
 			this.errManager = errManager;
@@ -17,7 +20,11 @@ namespace MyGame
 			this.currency = currency;
 			this.teamManager = teamManager;
 		}
-
+		/// <summary>
+		/// Checks to see if player clicks are within the deployment cells.
+		/// </summary>
+		/// <returns>The unit type</returns>
+		/// <param name="mouse">Mouse position</param>
 		public Unit handleInput (Point2D mouse) {
 			if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
 			foreach (UnitCell cell in manager.UnitCells) {
@@ -33,11 +40,16 @@ namespace MyGame
 			}
 			return null;
 		}
+		/// <summary>
+		/// Deploys the unit based on the cell that was clicked.
+		/// </summary>
+		/// <returns>A new instance of a certain type of hero class</returns>
+		/// <param name="type">Unit Type</param>
 		public Unit DeloyHero (UnitType type) { 
 			switch(type){ 
 				case UnitType.Town:
 				currency.Amount -= currency.PriceList [UnitType.Town];
-				Town town = new Town (10);
+				Town town = new Town ();
 				teamManager.AddHero (town);
 				return town;
 			case UnitType.Mage:
@@ -66,24 +78,26 @@ namespace MyGame
 				return null;
 			}
 		}
+		/// <summary>
+		/// Draws the units to the screen and deploys random enemies every 10 seconds.
+		/// </summary>
 		public void spawnUnits () {
 			DeployRandomEnemy ();
-			if (teamManager.heros.Count > 0) {
-					foreach (Unit unit in teamManager.heros) {
+			if (teamManager.Heroes.Count > 0) {
+				foreach (Unit unit in teamManager.Heroes) {
 						unit.draw ();
-					if (unit.getName () == "mage"){
-						if ((unit as Mage).fireball != null) {
-							//(unit as Mage).fireball.draw();
-						}
-					}
+		
 					}
 				}
-			if (teamManager.enemies.Count > 0) {
-				foreach (Unit unit in teamManager.enemies) {
+			if (teamManager.Enemies.Count > 0) {
+				foreach (Unit unit in teamManager.Enemies) {
 							unit.draw ();
 						}
 					}
 		}
+		/// <summary>
+		/// Randomly chooses which eneny is going to be spawned.
+		/// </summary>
 		private void DeployRandomEnemy () {
 			Random rand = new Random ();
 			delay--;
@@ -91,22 +105,22 @@ namespace MyGame
 				int spawnrate = rand.Next (100);
 				if (spawnrate > 0 && spawnrate <= 35) {
 					Lizard ghost = new Lizard ();
-					teamManager.enemies.Add (ghost);
+					teamManager.AddEnemy(ghost);
 				} else if (spawnrate > 35 && spawnrate <= 70) {
 					Minotaur demon = new Minotaur ();
-					teamManager.enemies.Add (demon);
+					teamManager.AddEnemy(demon);
 				} else if (spawnrate > 70 && spawnrate <= 80) {
 					Phoenix phoenix = new Phoenix ();
-					teamManager.enemies.Add (phoenix);
+					teamManager.AddEnemy (phoenix);
 
 				} else if (spawnrate > 80 && spawnrate <= 90) {
-					Cactus cactus = new Cactus (3);
-					teamManager.enemies.Add (cactus);
+					Cactus cactus = new Cactus ();
+					teamManager.AddEnemy(cactus);
 				} else if (spawnrate > 90 && spawnrate <= 100) {
 					Tree tree = new Tree ();
-					teamManager.enemies.Add (tree);
+					teamManager.AddEnemy (tree);
 				}
-				delay = 300;
+				delay = 600;
 			}
 
 			}

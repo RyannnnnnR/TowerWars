@@ -1,9 +1,12 @@
 ﻿using System;
 namespace MyGame
 {
+	/// <summary>
+	/// Defines lizard enemy character
+	/// </summary>
 	public class Lizard : Unit
 	{
-		public Lizard () : base("lizardBmp", "walkingScrpt", -0.4f, 5, true)
+		public Lizard () : base("lizardBmp", "walkingScrpt", -0.4f, 8, true)
 		{
 		}
 

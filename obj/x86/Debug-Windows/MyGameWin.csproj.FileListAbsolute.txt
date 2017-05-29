@@ -12,7 +12,6 @@ C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\FileDial
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\FileDialog_Scroll.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\FileDialog_ScrollSmall.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\healer.png
-C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\hills.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\homebase.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\mage.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\ninja.png
@@ -54,7 +53,11 @@ C:\Users\maxine\Documents\Projects\TowerWars\obj\x86\Debug-Windows\MyGame.exe
 C:\Users\maxine\Documents\Projects\TowerWars\obj\x86\Debug-Windows\MyGame.pdb
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\fireball.txt
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\fireball.png
-C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\demonwalking.txt
-C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\ghostwalking.txt
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\monster_lizardman2.png
 C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\monster_minotaur.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\hills.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\arrow.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\fireworks.txt
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\fireworks.png
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\animations\healing.txt
+C:\Users\maxine\Documents\Projects\TowerWars\bin\Debug\Resources\images\effects.png

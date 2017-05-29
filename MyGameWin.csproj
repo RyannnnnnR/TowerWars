@@ -49,9 +49,7 @@
   <ItemGroup>
     <Compile Include="src\GameMain.cs" />
     <Compile Include="src\Tower.cs" />
-    <Compile Include="src\Level.cs" />
     <Compile Include="src\Managers\CollisionManager.cs" />
-    <Compile Include="src\Managers\LevelManager.cs" />
     <Compile Include="src\Managers\TeamManager.cs" />
     <Compile Include="src\Utilities\GamePainter.cs" />
     <Compile Include="src\Utilities\Messages.cs" />
@@ -59,11 +57,9 @@
     <Compile Include="src\Utilities\Position.cs" />
     <Compile Include="src\Managers\GameManager.cs" />
     <Compile Include="src\Units\UnitType.cs" />
-    <Compile Include="src\Managers\CameraManager.cs" />
     <Compile Include="src\Utilities\Currency.cs" />
     <Compile Include="src\Units\UnitCell.cs" />
     <Compile Include="src\Managers\DeploymentManager.cs" />
-    <Compile Include="src\Units\SpellCaster.cs" />
     <Compile Include="src\HomeTower.cs" />
     <Compile Include="src\EnemyTower.cs" />
     <Compile Include="src\Units\Heros\Healer.cs" />
@@ -71,14 +67,12 @@
     <Compile Include="src\Units\Heros\Ninja.cs" />
     <Compile Include="src\Units\Heros\Ranger.cs" />
     <Compile Include="src\Units\Heros\Warrior.cs" />
-    <Compile Include="src\Utilities\GameState.cs" />
     <Compile Include="src\Units\Heros\Town.cs" />
     <Compile Include="src\Units\Enemies\Tree.cs" />
     <Compile Include="src\Units\Enemies\Cactus.cs" />
     <Compile Include="src\Units\Enemies\Phoenix.cs" />
     <Compile Include="src\Units\Enemies\Minotaur.cs" />
     <Compile Include="src\Units\Enemies\Lizard.cs" />
-    <Compile Include="src\Managers\GarbageCollecter.cs" />
     <Compile Include="src\Managers\ErrorManager.cs" />
     <Compile Include="src\Managers\HealthManager.cs" />
     <Compile Include="src\Units\Projectile\Fireball.cs" />
@@ -94,7 +88,9 @@
   </ItemGroup>
   <ItemGroup>
     <WinLibs Include="lib\win32\*.dll" />
-    <None Include="Resources\images\hills.png" />
+    <None Include="Resources\images\hills.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Resources\images\homebase.png" />
     <None Include="Resources\animations\startup.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -136,9 +132,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\healer.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\images\hills.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\homebase.png">
@@ -248,21 +241,30 @@
     <None Include="Resources\images\monster_treant.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Include="Resources\images\spells.png" />
     <None Include="Resources\animations\fireball.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="src\TODO.txt" />
-    <None Include="Resources\animations\demonwalking.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Include="Resources\animations\ghostwalking.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\images\monster_lizardman2.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Resources\images\monster_minotaur.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="src\.DS_Store" />
+    <None Include="Resources\images\arrow.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\animations\fireworks.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\fireworks.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\animations\healing.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Resources\images\effects.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

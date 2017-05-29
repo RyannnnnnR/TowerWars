@@ -3,18 +3,15 @@ using SwinGameSDK;
 
 namespace MyGame
 {
+	/// <summary>
+	/// Defines town hero character
+	/// </summary>
 	public class Town : Unit
 	{
-		private float dmg;
-		public Town (int dmg) : base ("townBmp", "walkingScrpt", 0.4f, 5, false)
+		public Town () : base ("townBmp", "walkingScrpt", 0.4f, 5, false)
 		{
-			this.dmg = dmg;
 		}
 
-		public int attack ()
-		{
-			throw new NotImplementedException ();
-		}
 
 		public override string getName ()
 		{

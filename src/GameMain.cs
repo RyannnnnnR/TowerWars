@@ -10,7 +10,9 @@ namespace MyGame
 			//Open the game window
 			SwinGame.OpenGraphicsWindow ("TowerWars", 800, 600);
 			SwinGame.ShowSwinGameSplashScreen ();
+			//Load images and animations
 			SwinGame.LoadResourceBundle ("characterbundle.txt");
+			//Initialise all game components
 			GameManager manager = new GameManager ();
 			Currency currency = new Currency (manager);
 			TeamManager teamManager = new TeamManager ();
@@ -21,26 +23,28 @@ namespace MyGame
 			CollisionManager collisionManager = new CollisionManager (manager, teamManager, healthManager, home, enemy);
 			DeploymentManager deployManager = new DeploymentManager (manager, currency, teamManager, errManager);
 			GamePainter painter = new GamePainter (manager, currency);
-			Cactus cact = new Cactus (0);
-			cact.Health = 10;
-			//teamManager.AddEnemy (cact);
 			//Run the game loop
 			while (false == SwinGame.WindowCloseRequested ()) {
 				//Fetch the next batch of UI interaction
 				SwinGame.ProcessEvents ();
-				painter.Paint ();
-				if (SwinGame.MouseClicked (MouseButton.LeftButton)) {
-					Console.WriteLine ("HCount:" + teamManager.heros.Count + "Ecount:" + teamManager.enemies.Count);
-				}
 				//Paint all elements on to the screen
-				deployManager.handleInput (SwinGame.MousePosition ());
-				deployManager.spawnUnits ();
-				collisionManager.handleCollisions ();
-				healthManager.updateHealth ();
+				painter.Paint ();
+
+				//Handle game over
+				if (manager.Running) {
+					deployManager.handleInput (SwinGame.MousePosition ());
+					deployManager.spawnUnits ();
+					collisionManager.handleCollisions ();
+					errManager.handleErrors ();
+					currency.update ();
+				} else {
+					teamManager.clearTeams ();
+					manager.drawWinLoseMessage ();
+				}
+				//Keep bases/health on screen, all the time.
 				painter.paintHomeBase (Position.HOME_BASE_X, Position.HOME_BASE_Y);
 				painter.paintEnemeyBase (Position.ENEMY_BASE_X, Position.ENEMY_BASE_Y);
-				errManager.handleErrors ();
-				currency.update ();
+				healthManager.updateHealth ();
 				SwinGame.DrawFramerate (0, 0);
 
 					//Draw onto the screen

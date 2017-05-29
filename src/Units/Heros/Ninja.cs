@@ -1,10 +1,12 @@
 ﻿using System;
 namespace MyGame
 {
-	//Ranged or physical????
+	/// <summary>
+	/// Defines ninja hero character
+	/// </summary>
 	public class Ninja : Unit
 	{
-	public Ninja () :base("ninjaBmp", "ninjaRunninScrpt", 0.5f, 20, false)
+	public Ninja () :base("ninjaBmp", "ninjaRunningScrpt", 0.5f, 20, false)
 		{
 		}
 

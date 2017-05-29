@@ -5,9 +5,12 @@ using SwinGameSDK;
 
 namespace MyGame
 {
+	/// <summary>
+	/// A currency class allowing players to buy units.
+	/// </summary>
 	public class Currency
 	{
-		private int amount = 35;
+		private int amount = 0;
 		private int delay = 60;
 		private Dictionary<UnitType, int> pricelist = new Dictionary<UnitType, int> ();
 		private GameManager manager;
@@ -22,31 +25,38 @@ namespace MyGame
 			pricelist.Add (UnitType.Warrior, 55);
 			pricelist.Add (UnitType.Ninja, 75);
 		}
-
-		public void drawCoin ()
-		{
-			
-			drawAmount ();
-		}
+		/// <summary>
+		/// Draws the amount of money the player has.
+		/// </summary>
 		public void drawAmount ()
 		{
 			SwinGame.DrawText (amount.ToString (), Color.White, Position.COIN_X + 25, Position.COIN_Y + 5);
 		}
-
+		/// <summary>
+		/// Updates currency by 2 every second.
+		/// </summary>
 		public void update ()
 		{
 			delay--;
 			if (delay == 0)
 				{
-					amount++;
+					amount+=2;
 					delay = 60;
 				}
 				drawAmount ();
 
 		}
+		/// <summary>
+		/// A Property that dynamically keep track of all unit prices
+		/// </summary>
+		/// <value>The price list.</value>
 		public Dictionary<UnitType, int> PriceList { 
 			get { return pricelist; }
 		}
+		/// <summary>
+		/// A property that keeps track of how much money the player has.
+		/// </summary>
+		/// <value>The amount.</value>
 		public int Amount {
 			get {
 				return amount;

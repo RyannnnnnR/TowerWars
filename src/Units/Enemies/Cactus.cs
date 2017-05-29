@@ -3,13 +3,14 @@ using SwinGameSDK;
 
 namespace MyGame
 {
+	/// <summary>
+	/// Defines the cactus enemy
+	/// </summary>
 	public class Cactus : Unit
 	{
-		private float dmg;
 
-		public Cactus (int dmg) : base ("cactusBmp","walkingScrpt", -0.40f, 5, true)
+		public Cactus () : base ("cactusBmp","walkingScrpt", -0.40f, 7, true)
 		{
-			this.dmg = dmg;
 		}
 
 		public override string getName ()
